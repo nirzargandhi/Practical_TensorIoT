@@ -8,6 +8,7 @@ import UIKit
 //MARK: - UIColor Extension
 extension UIColor {
 
+    class func appGrayColor() -> UIColor { return UIColor(named: "AppGray")! }
     class func appPrimaryColor() -> UIColor { return UIColor(named: "AppPrimary")! }
     class func appRedColor() -> UIColor { return UIColor(named: "AppRed")! }
     class func appSecondaryColor() -> UIColor { return UIColor(named: "AppSecondary")! }

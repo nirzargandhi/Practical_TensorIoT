@@ -32,6 +32,10 @@
 		E61B455A2AD18A6D001C3585 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E61B454F2AD18A6D001C3585 /* Inter-SemiBold.ttf */; };
 		E61B455D2AD18B2F001C3585 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B455C2AD18B2F001C3585 /* UIColor+Extension.swift */; };
 		E61B45622AD18F8F001C3585 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B45612AD18F8F001C3585 /* SignInVC.swift */; };
+		E64411AC2AD1A87000BA76AF /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64411AB2AD1A87000BA76AF /* SignUpVC.swift */; };
+		E64411B02AD1A9E900BA76AF /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64411AF2AD1A9E900BA76AF /* DashboardVC.swift */; };
+		E64411B22AD1AC4800BA76AF /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64411B12AD1AC4800BA76AF /* UITextField+Extension.swift */; };
+		E64411B52AD1AF5800BA76AF /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64411B42AD1AF5800BA76AF /* NetworkCheck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		E61B454F2AD18A6D001C3585 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		E61B455C2AD18B2F001C3585 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		E61B45612AD18F8F001C3585 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		E64411AB2AD1A87000BA76AF /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		E64411AF2AD1A9E900BA76AF /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		E64411B12AD1AC4800BA76AF /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		E64411B42AD1AF5800BA76AF /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +187,7 @@
 			children = (
 				E61B45322AD18738001C3585 /* Constants */,
 				E61B45352AD187C8001C3585 /* Extensions */,
+				E64411B32AD1AE7900BA76AF /* Network Calls */,
 				E61B455B2AD18AC2001C3585 /* Plist Files */,
 				E61B453C2AD1889C001C3585 /* Utility */,
 			);
@@ -198,6 +207,7 @@
 			children = (
 				E61B45362AD187DC001C3585 /* AppDelegate+Configuration.swift */,
 				E61B455C2AD18B2F001C3585 /* UIColor+Extension.swift */,
+				E64411B12AD1AC4800BA76AF /* UITextField+Extension.swift */,
 				E61B45382AD18808001C3585 /* UIView+Extension.swift */,
 				E61B453A2AD18842001C3585 /* UIViewController+Extension.swift */,
 			);
@@ -266,7 +276,9 @@
 		E61B455E2AD18F65001C3585 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E64411AD2AD1A8E000BA76AF /* Dashboard */,
 				E61B455F2AD18F6D001C3585 /* Sign In */,
+				E64411A92AD1A85500BA76AF /* Sign Up */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -285,6 +297,46 @@
 				E61B45612AD18F8F001C3585 /* SignInVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E64411A92AD1A85500BA76AF /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				E64411AA2AD1A85B00BA76AF /* Controller */,
+			);
+			path = "Sign Up";
+			sourceTree = "<group>";
+		};
+		E64411AA2AD1A85B00BA76AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E64411AB2AD1A87000BA76AF /* SignUpVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E64411AD2AD1A8E000BA76AF /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				E64411AE2AD1A8E800BA76AF /* Controller */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		E64411AE2AD1A8E800BA76AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E64411AF2AD1A9E900BA76AF /* DashboardVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E64411B32AD1AE7900BA76AF /* Network Calls */ = {
+			isa = PBXGroup;
+			children = (
+				E64411B42AD1AF5800BA76AF /* NetworkCheck.swift */,
+			);
+			path = "Network Calls";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,10 +484,14 @@
 				E61B45372AD187DC001C3585 /* AppDelegate+Configuration.swift in Sources */,
 				E61B45622AD18F8F001C3585 /* SignInVC.swift in Sources */,
 				E61B453E2AD188A9001C3585 /* Utility.swift in Sources */,
+				E64411B02AD1A9E900BA76AF /* DashboardVC.swift in Sources */,
 				E61B45402AD18A2D001C3585 /* JailbreakDetector.swift in Sources */,
 				E61B45392AD18808001C3585 /* UIView+Extension.swift in Sources */,
 				E61B453B2AD18842001C3585 /* UIViewController+Extension.swift in Sources */,
+				E64411B52AD1AF5800BA76AF /* NetworkCheck.swift in Sources */,
 				E61B45342AD1874A001C3585 /* Constants.swift in Sources */,
+				E64411B22AD1AC4800BA76AF /* UITextField+Extension.swift in Sources */,
+				E64411AC2AD1A87000BA76AF /* SignUpVC.swift in Sources */,
 				E61B455D2AD18B2F001C3585 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

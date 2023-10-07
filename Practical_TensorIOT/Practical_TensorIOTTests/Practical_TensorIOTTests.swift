@@ -2,8 +2,6 @@
 //  Practical_TensorIOTTests.swift
 //  Practical_TensorIOTTests
 //
-//  Created by Nirzar Gandhi on 07/10/23.
-//
 
 import XCTest
 @testable import Practical_TensorIOT

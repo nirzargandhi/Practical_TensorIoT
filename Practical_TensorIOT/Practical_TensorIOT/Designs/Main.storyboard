@@ -1,31 +1,867 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vjx-Jy-Ab8">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Bold.ttf">
+            <string>Inter-Bold</string>
+        </array>
+        <array key="Inter-Medium.ttf">
+            <string>Inter-Medium</string>
+        </array>
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+        <array key="Inter-SemiBold.ttf">
+            <string>Inter-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Sign InVC-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="wEE-SJ-Gid">
             <objects>
-                <viewController storyboardIdentifier="SignInVC" id="BYZ-38-t0r" customClass="SignInVC" customModule="Practical_TensorIOT" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Vjx-Jy-Ab8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i9q-5H-y2z">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Byk-V7-9eE" kind="relationship" relationship="rootViewController" id="PEP-Dw-4ci"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aB0-mU-DMS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18" y="-27"/>
+        </scene>
+        <!--Sign InVC-->
+        <scene sceneID="Gw1-bq-gBP">
+            <objects>
+                <viewController storyboardIdentifier="SignInVC" id="Byk-V7-9eE" customClass="SignInVC" customModule="Practical_TensorIOT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MC2-Zc-QEQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDE-W9-qJk">
+                                <rect key="frame" x="20" y="30" width="80" height="29.5"/>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <color key="textColor" name="AppPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I14-i9-5gD">
+                                <rect key="frame" x="20" y="79.5" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cV3-wn-Y4R"/>
+                                </constraints>
+                                <color key="textColor" name="AppPrimary"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingRightView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="AppPrimary"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="Byk-V7-9eE" id="PI7-lL-BR6"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDg-UC-nyt">
+                                <rect key="frame" x="20" y="139.5" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hX7-bG-bUY"/>
+                                </constraints>
+                                <color key="textColor" name="AppPrimary"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingRightView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="AppPrimary"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="Byk-V7-9eE" id="v6m-ju-7LU"/>
+                                </connections>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDd-PE-OPV">
+                                <rect key="frame" x="22" y="199.5" width="331" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="12"/>
+                                <color key="textColor" name="AppRed"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ahh-xe-0ZM">
+                                <rect key="frame" x="20" y="537" width="335" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOY-r7-eky">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                        <color key="backgroundColor" name="AppGray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="2xv-FB-PTf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" name="AppSecondary"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnSignInAction:" destination="Byk-V7-9eE" eventType="touchUpInside" id="Bln-ZL-Srs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="col-VE-3q6">
+                                        <rect key="frame" x="0.0" y="60" width="335" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Npl-Nv-QqX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Create a account">
+                                            <color key="titleColor" name="AppPrimary"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="AppPrimary"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnCreateAccountAction:" destination="Byk-V7-9eE" eventType="touchUpInside" id="9Ay-h4-7fv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="I6c-KY-8SB"/>
+                        <color key="backgroundColor" name="AppSecondary"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ahh-xe-0ZM" secondAttribute="trailing" constant="20" id="57c-25-KxQ"/>
+                            <constraint firstItem="NDd-PE-OPV" firstAttribute="top" secondItem="NDg-UC-nyt" secondAttribute="bottom" constant="10" id="7wT-ul-SIh"/>
+                            <constraint firstItem="wDE-W9-qJk" firstAttribute="leading" secondItem="I6c-KY-8SB" secondAttribute="leading" constant="20" id="BWp-uc-RtS"/>
+                            <constraint firstItem="I14-i9-5gD" firstAttribute="leading" secondItem="MC2-Zc-QEQ" secondAttribute="leading" constant="20" id="JHo-sf-Mnv"/>
+                            <constraint firstAttribute="trailing" secondItem="NDd-PE-OPV" secondAttribute="trailing" constant="22" id="LH2-on-fys"/>
+                            <constraint firstItem="wDE-W9-qJk" firstAttribute="top" secondItem="I6c-KY-8SB" secondAttribute="top" constant="10" id="OYA-bo-oyp"/>
+                            <constraint firstItem="Ahh-xe-0ZM" firstAttribute="leading" secondItem="MC2-Zc-QEQ" secondAttribute="leading" constant="20" id="U95-cV-um6"/>
+                            <constraint firstAttribute="bottom" secondItem="Ahh-xe-0ZM" secondAttribute="bottom" constant="20" id="Xtp-ZV-zZb"/>
+                            <constraint firstItem="NDd-PE-OPV" firstAttribute="leading" secondItem="MC2-Zc-QEQ" secondAttribute="leading" constant="22" id="ZSj-hc-CuI"/>
+                            <constraint firstItem="NDg-UC-nyt" firstAttribute="leading" secondItem="MC2-Zc-QEQ" secondAttribute="leading" constant="20" id="ajz-4Y-9lo"/>
+                            <constraint firstAttribute="trailing" secondItem="I14-i9-5gD" secondAttribute="trailing" constant="20" id="av2-w6-z7L"/>
+                            <constraint firstItem="I14-i9-5gD" firstAttribute="top" secondItem="wDE-W9-qJk" secondAttribute="bottom" constant="20" id="eU3-Uu-A71"/>
+                            <constraint firstAttribute="trailing" secondItem="NDg-UC-nyt" secondAttribute="trailing" constant="20" id="p3K-3G-pAc"/>
+                            <constraint firstItem="NDg-UC-nyt" firstAttribute="top" secondItem="I14-i9-5gD" secondAttribute="bottom" constant="10" id="wXC-br-rz7"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ybn-fl-KLK"/>
+                    <connections>
+                        <outlet property="btnSignIn" destination="DOY-r7-eky" id="vk2-K4-syQ"/>
+                        <outlet property="lblValidMessage" destination="NDd-PE-OPV" id="aS3-k9-WAl"/>
+                        <outlet property="txtEmailId" destination="I14-i9-5gD" id="QK9-IX-Ag6"/>
+                        <outlet property="txtPassword" destination="NDg-UC-nyt" id="t3U-3e-Jp0"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uw1-Ew-0se" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8" y="-27"/>
+            <point key="canvasLocation" x="745" y="-27"/>
+        </scene>
+        <!--Sign UpVC-->
+        <scene sceneID="hdv-YM-5Se">
+            <objects>
+                <viewController storyboardIdentifier="SignUpVC" id="F8G-ae-0W8" customClass="SignUpVC" customModule="Practical_TensorIOT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wGw-Db-31N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2C-gJ-VZD">
+                                <rect key="frame" x="20" y="30" width="32" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="AppPrimary"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic_back"/>
+                                <connections>
+                                    <action selector="btnBackAction:" destination="F8G-ae-0W8" eventType="touchUpInside" id="iXf-AL-YbV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="np2-KM-mZ8">
+                                <rect key="frame" x="72" y="31.5" width="91" height="29.5"/>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <color key="textColor" name="AppPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile" translatesAutoresizingMaskIntoConstraints="NO" id="tZy-fj-Cxz">
+                                <rect key="frame" x="137.5" y="82" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="AppPrimary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="klx-uh-hOt"/>
+                                    <constraint firstAttribute="height" constant="100" id="sha-gt-A5f"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uby-xz-huc">
+                                <rect key="frame" x="200.5" y="145" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="XZR-Ft-Diy"/>
+                                    <constraint firstAttribute="width" constant="32" id="vdi-xC-6eH"/>
+                                </constraints>
+                                <color key="tintColor" name="AppPrimary"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic_camera"/>
+                                <connections>
+                                    <action selector="btnAddProfilePicAction:" destination="F8G-ae-0W8" eventType="touchUpInside" id="B0e-qc-Lll"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DTX-4x-w7c">
+                                <rect key="frame" x="20" y="202" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jXC-AS-lRT"/>
+                                </constraints>
+                                <color key="textColor" name="AppPrimary"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingRightView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="AppPrimary"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                        <integer key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="F8G-ae-0W8" id="rsT-HQ-gJG"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HtA-pN-xCh">
+                                <rect key="frame" x="20" y="262" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fOg-gO-wzN"/>
+                                </constraints>
+                                <color key="textColor" name="AppPrimary"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingRightView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="AppPrimary"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="F8G-ae-0W8" id="Pcl-Hw-tEI"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1vi-am-soK">
+                                <rect key="frame" x="20" y="322" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4R5-jD-KBV"/>
+                                </constraints>
+                                <color key="textColor" name="AppPrimary"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingRightView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="AppPrimary"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="F8G-ae-0W8" id="YT0-Fz-iNE"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5yB-8b-hFb">
+                                <rect key="frame" x="20" y="382" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rFw-zZ-3LH"/>
+                                </constraints>
+                                <color key="textColor" name="AppPrimary"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingRightView">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="AppPrimary"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="F8G-ae-0W8" id="na3-tT-loZ"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XPS-ce-N0Z" customClass="PlaceholderTextView" customModule="Practical_TensorIOT" customModuleProvider="target">
+                                <rect key="frame" x="20" y="442" width="335" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="SGW-Qz-1dz"/>
+                                </constraints>
+                                <color key="textColor" name="AppPrimary"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="AppPrimary"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Bio"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="F8G-ae-0W8" id="6YZ-Mr-mil"/>
+                                </connections>
+                            </textView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4z6-Ue-I82">
+                                <rect key="frame" x="22" y="552" width="331" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="12"/>
+                                <color key="textColor" name="AppRed"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86L-Ff-EAf">
+                                <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <color key="backgroundColor" name="AppGray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zqW-oJ-3Sv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" name="AppSecondary"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnSignUpAction:" destination="F8G-ae-0W8" eventType="touchUpInside" id="Qyb-IQ-Ck1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nKW-bY-zf4"/>
+                        <color key="backgroundColor" name="AppSecondary"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="86L-Ff-EAf" secondAttribute="bottom" constant="20" id="0kC-6h-6qT"/>
+                            <constraint firstItem="DTX-4x-w7c" firstAttribute="leading" secondItem="wGw-Db-31N" secondAttribute="leading" constant="20" id="4li-2Q-7g0"/>
+                            <constraint firstItem="DTX-4x-w7c" firstAttribute="top" secondItem="tZy-fj-Cxz" secondAttribute="bottom" constant="20" id="5Dn-nE-oLU"/>
+                            <constraint firstItem="4z6-Ue-I82" firstAttribute="top" secondItem="XPS-ce-N0Z" secondAttribute="bottom" constant="10" id="5I7-73-MZr"/>
+                            <constraint firstItem="1vi-am-soK" firstAttribute="top" secondItem="HtA-pN-xCh" secondAttribute="bottom" constant="10" id="8VM-4I-nYV"/>
+                            <constraint firstItem="5yB-8b-hFb" firstAttribute="top" secondItem="1vi-am-soK" secondAttribute="bottom" constant="10" id="Ao5-3W-Yhj"/>
+                            <constraint firstItem="np2-KM-mZ8" firstAttribute="centerY" secondItem="k2C-gJ-VZD" secondAttribute="centerY" id="Be5-rz-sMW"/>
+                            <constraint firstItem="Uby-xz-huc" firstAttribute="trailing" secondItem="tZy-fj-Cxz" secondAttribute="trailing" constant="-5" id="GMP-A3-lm2"/>
+                            <constraint firstAttribute="trailing" secondItem="86L-Ff-EAf" secondAttribute="trailing" constant="20" id="GVa-Qj-oN4"/>
+                            <constraint firstItem="k2C-gJ-VZD" firstAttribute="top" secondItem="nKW-bY-zf4" secondAttribute="top" constant="10" id="Ibq-hT-15r"/>
+                            <constraint firstItem="XPS-ce-N0Z" firstAttribute="leading" secondItem="wGw-Db-31N" secondAttribute="leading" constant="20" id="KHb-pN-ued"/>
+                            <constraint firstItem="np2-KM-mZ8" firstAttribute="leading" secondItem="k2C-gJ-VZD" secondAttribute="trailing" constant="20" id="LBR-Pd-utg"/>
+                            <constraint firstItem="4z6-Ue-I82" firstAttribute="leading" secondItem="wGw-Db-31N" secondAttribute="leading" constant="22" id="OTD-t9-ldq"/>
+                            <constraint firstAttribute="trailing" secondItem="1vi-am-soK" secondAttribute="trailing" constant="20" id="QWY-eJ-hLk"/>
+                            <constraint firstItem="Uby-xz-huc" firstAttribute="bottom" secondItem="tZy-fj-Cxz" secondAttribute="bottom" constant="-5" id="Tr6-eW-PBE"/>
+                            <constraint firstItem="86L-Ff-EAf" firstAttribute="leading" secondItem="wGw-Db-31N" secondAttribute="leading" constant="20" id="UET-Nn-5p3"/>
+                            <constraint firstItem="HtA-pN-xCh" firstAttribute="leading" secondItem="wGw-Db-31N" secondAttribute="leading" constant="20" id="X6H-Qg-ZSc"/>
+                            <constraint firstItem="1vi-am-soK" firstAttribute="leading" secondItem="wGw-Db-31N" secondAttribute="leading" constant="20" id="bzj-JN-LqL"/>
+                            <constraint firstItem="HtA-pN-xCh" firstAttribute="top" secondItem="DTX-4x-w7c" secondAttribute="bottom" constant="10" id="gg8-fy-oLE"/>
+                            <constraint firstItem="k2C-gJ-VZD" firstAttribute="leading" secondItem="nKW-bY-zf4" secondAttribute="leading" constant="20" id="h7g-7N-9Cl"/>
+                            <constraint firstAttribute="trailing" secondItem="XPS-ce-N0Z" secondAttribute="trailing" constant="20" id="hGw-nD-ziu"/>
+                            <constraint firstAttribute="trailing" secondItem="DTX-4x-w7c" secondAttribute="trailing" constant="20" id="iDa-ee-UCQ"/>
+                            <constraint firstItem="tZy-fj-Cxz" firstAttribute="centerX" secondItem="wGw-Db-31N" secondAttribute="centerX" id="ji7-fV-2zp"/>
+                            <constraint firstAttribute="trailing" secondItem="5yB-8b-hFb" secondAttribute="trailing" constant="20" id="mev-PV-bLo"/>
+                            <constraint firstItem="XPS-ce-N0Z" firstAttribute="top" secondItem="5yB-8b-hFb" secondAttribute="bottom" constant="10" id="nic-6G-dXZ"/>
+                            <constraint firstAttribute="trailing" secondItem="HtA-pN-xCh" secondAttribute="trailing" constant="20" id="nno-G3-eAJ"/>
+                            <constraint firstItem="tZy-fj-Cxz" firstAttribute="top" secondItem="k2C-gJ-VZD" secondAttribute="bottom" constant="20" id="p72-tm-8Kn"/>
+                            <constraint firstItem="5yB-8b-hFb" firstAttribute="leading" secondItem="wGw-Db-31N" secondAttribute="leading" constant="20" id="sVp-Cx-zGK"/>
+                            <constraint firstAttribute="trailing" secondItem="4z6-Ue-I82" secondAttribute="trailing" constant="22" id="tw2-Ud-uYd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CUm-xg-om4"/>
+                    <connections>
+                        <outlet property="btnSignUp" destination="86L-Ff-EAf" id="hGt-EX-lGW"/>
+                        <outlet property="imgvProfilePic" destination="tZy-fj-Cxz" id="k6a-S1-mfC"/>
+                        <outlet property="lblValidMessage" destination="4z6-Ue-I82" id="17J-iF-cff"/>
+                        <outlet property="tvBio" destination="XPS-ce-N0Z" id="EQ4-xf-Hfz"/>
+                        <outlet property="txtEmailId" destination="1vi-am-soK" id="F0V-vq-Cv3"/>
+                        <outlet property="txtFullName" destination="DTX-4x-w7c" id="JxC-Wc-E6J"/>
+                        <outlet property="txtPassword" destination="5yB-8b-hFb" id="Xwr-We-t0M"/>
+                        <outlet property="txtUsername" destination="HtA-pN-xCh" id="laa-Eg-Qwe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lcm-S7-zvJ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1489" y="-27"/>
+        </scene>
+        <!--DashboardVC-->
+        <scene sceneID="vuh-fI-kdq">
+            <objects>
+                <viewController storyboardIdentifier="DashboardVC" id="dzX-k9-rLX" customClass="DashboardVC" customModule="Practical_TensorIOT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dar-Fr-BUf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDS-Ij-1Ip">
+                                <rect key="frame" x="20" y="30" width="128.5" height="29.5"/>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <color key="textColor" name="AppPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPn-qf-K9j">
+                                <rect key="frame" x="323" y="29" width="32" height="32"/>
+                                <color key="tintColor" name="AppPrimary"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic_logout"/>
+                                <connections>
+                                    <action selector="btnLogoutAction:" destination="dzX-k9-rLX" eventType="touchUpInside" id="POV-qU-2ne"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qqy-3t-iAz">
+                                <rect key="frame" x="0.0" y="79.5" width="375" height="587.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRI-Je-PJu">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile" translatesAutoresizingMaskIntoConstraints="NO" id="3YP-Jq-vWq">
+                                                <rect key="frame" x="137.5" y="0.0" width="100" height="100"/>
+                                                <color key="tintColor" name="AppPrimary"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="H3E-Zu-CUH"/>
+                                                    <constraint firstAttribute="height" constant="100" id="waP-cn-wzt"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="50"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xl-z2-3PJ">
+                                                <rect key="frame" x="20" y="110" width="50" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="16"/>
+                                                <color key="textColor" name="AppPrimary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNl-3f-6EA">
+                                                <rect key="frame" x="20" y="134.5" width="335" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                                <color key="textColor" name="AppPrimary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Id:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmF-Zg-Nmo">
+                                                <rect key="frame" x="20" y="144.5" width="66" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="16"/>
+                                                <color key="textColor" name="AppPrimary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jww-Lb-qKF">
+                                                <rect key="frame" x="20" y="169" width="335" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                                <color key="textColor" name="AppPrimary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSy-wP-ioV">
+                                                <rect key="frame" x="20" y="179" width="30" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="16"/>
+                                                <color key="textColor" name="AppPrimary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKG-FU-2mN">
+                                                <rect key="frame" x="20" y="203.5" width="335" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                                <color key="textColor" name="AppPrimary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDV-aw-Cdd">
+                                                <rect key="frame" x="20" y="248.5" width="335" height="0.5"/>
+                                                <color key="backgroundColor" name="AppPrimary"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="0.5" id="zp1-AT-Awj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search by City, State, Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pct-92-zlx">
+                                                <rect key="frame" x="20" y="269" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="fcr-Y1-qR4"/>
+                                                </constraints>
+                                                <color key="textColor" name="AppPrimary"/>
+                                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftView">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingRightView">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="AppPrimary"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="dzX-k9-rLX" id="yZn-nt-fqf"/>
+                                                </connections>
+                                            </textField>
+                                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLt-Zs-spZ">
+                                                <rect key="frame" x="20" y="339" width="335" height="268"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mumbai" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Om-Zh-8V0">
+                                                        <rect key="frame" x="16" y="16" width="251" height="22"/>
+                                                        <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="18"/>
+                                                        <color key="textColor" name="AppSecondary"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vqq-gG-qQL">
+                                                        <rect key="frame" x="283" y="16" width="36" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="36" id="DUA-XH-pco"/>
+                                                            <constraint firstAttribute="height" constant="36" id="RVd-V2-Bqn"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-SE-aaC">
+                                                        <rect key="frame" x="16" y="60" width="303" height="192"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QVi-AB-LvZ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="143.5" height="192"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fj4-AA-imA">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Current Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf1-pG-N1H">
+                                                                        <rect key="frame" x="0.0" y="25" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Low Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXO-Io-5RV">
+                                                                        <rect key="frame" x="0.0" y="50" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0Z-NO-4Gv">
+                                                                        <rect key="frame" x="0.0" y="75" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPs-n8-9wx">
+                                                                        <rect key="frame" x="0.0" y="100" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pej-AY-nwI">
+                                                                        <rect key="frame" x="0.0" y="125" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikc-7V-mQw">
+                                                                        <rect key="frame" x="0.0" y="150" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oU-Qc-OKq">
+                                                                        <rect key="frame" x="0.0" y="175" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZkS-La-M9C">
+                                                                <rect key="frame" x="159.5" y="0.0" width="143.5" height="192"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Time" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMM-as-Z2G">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Temp" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6t-ao-qJK">
+                                                                        <rect key="frame" x="0.0" y="25" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Low Temp" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxm-Sx-sGh">
+                                                                        <rect key="frame" x="0.0" y="50" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDg-OQ-oB0">
+                                                                        <rect key="frame" x="0.0" y="75" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WK-NM-onC">
+                                                                        <rect key="frame" x="0.0" y="100" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Speed" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48S-rj-pSk">
+                                                                        <rect key="frame" x="0.0" y="125" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise TIme" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0B-iI-hOD">
+                                                                        <rect key="frame" x="0.0" y="150" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset Time" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQJ-hf-MkV">
+                                                                        <rect key="frame" x="0.0" y="175" width="143.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                                                                        <color key="textColor" name="AppSecondary"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="AppPrimary"/>
+                                                <constraints>
+                                                    <constraint firstItem="1Om-Zh-8V0" firstAttribute="leading" secondItem="bLt-Zs-spZ" secondAttribute="leading" constant="16" id="10X-tX-8pi"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vqq-gG-qQL" secondAttribute="trailing" constant="16" id="DYF-3D-b5s"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mPn-SE-aaC" secondAttribute="trailing" constant="16" id="Mkt-XT-Yxs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="mPn-SE-aaC" secondAttribute="bottom" constant="16" id="XXQ-jN-7KS"/>
+                                                    <constraint firstItem="1Om-Zh-8V0" firstAttribute="top" secondItem="bLt-Zs-spZ" secondAttribute="top" constant="16" id="cIQ-WW-6yk"/>
+                                                    <constraint firstItem="vqq-gG-qQL" firstAttribute="leading" secondItem="1Om-Zh-8V0" secondAttribute="trailing" constant="16" id="hVM-CJ-FVa"/>
+                                                    <constraint firstItem="mPn-SE-aaC" firstAttribute="leading" secondItem="bLt-Zs-spZ" secondAttribute="leading" constant="16" id="miH-AV-1UW"/>
+                                                    <constraint firstItem="vqq-gG-qQL" firstAttribute="top" secondItem="bLt-Zs-spZ" secondAttribute="top" constant="16" id="vWg-tk-5Mg"/>
+                                                    <constraint firstItem="mPn-SE-aaC" firstAttribute="top" secondItem="vqq-gG-qQL" secondAttribute="bottom" constant="8" id="vjY-fk-4Ac"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No weather data available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhK-jk-inM">
+                                                <rect key="frame" x="89" y="463.5" width="197" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                                <color key="textColor" name="AppPrimary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="cKG-FU-2mN" firstAttribute="leading" secondItem="fRI-Je-PJu" secondAttribute="leading" constant="20" id="1mh-uu-kLo"/>
+                                            <constraint firstItem="DmF-Zg-Nmo" firstAttribute="top" secondItem="DNl-3f-6EA" secondAttribute="bottom" constant="10" id="3AT-MQ-oid"/>
+                                            <constraint firstAttribute="trailing" secondItem="bLt-Zs-spZ" secondAttribute="trailing" constant="20" id="5en-aq-ffC"/>
+                                            <constraint firstItem="DNl-3f-6EA" firstAttribute="top" secondItem="0Xl-z2-3PJ" secondAttribute="bottom" constant="5" id="7Vq-hj-EjH"/>
+                                            <constraint firstAttribute="trailing" secondItem="DNl-3f-6EA" secondAttribute="trailing" constant="20" id="ATH-0z-Vnh"/>
+                                            <constraint firstItem="3YP-Jq-vWq" firstAttribute="centerX" secondItem="fRI-Je-PJu" secondAttribute="centerX" id="BXh-Bp-nml"/>
+                                            <constraint firstItem="nDV-aw-Cdd" firstAttribute="top" secondItem="uSy-wP-ioV" secondAttribute="bottom" constant="50" id="CpN-UJ-ldD"/>
+                                            <constraint firstItem="jww-Lb-qKF" firstAttribute="leading" secondItem="fRI-Je-PJu" secondAttribute="leading" constant="20" id="Hym-e1-RWb"/>
+                                            <constraint firstItem="WhK-jk-inM" firstAttribute="centerX" secondItem="bLt-Zs-spZ" secondAttribute="centerX" id="JED-tk-xUJ"/>
+                                            <constraint firstItem="0Xl-z2-3PJ" firstAttribute="top" secondItem="3YP-Jq-vWq" secondAttribute="bottom" constant="10" id="M3C-fW-Fd3"/>
+                                            <constraint firstItem="Pct-92-zlx" firstAttribute="leading" secondItem="fRI-Je-PJu" secondAttribute="leading" constant="20" id="RDb-h7-pOi"/>
+                                            <constraint firstAttribute="trailing" secondItem="jww-Lb-qKF" secondAttribute="trailing" constant="20" id="SlI-Lh-fzK"/>
+                                            <constraint firstItem="nDV-aw-Cdd" firstAttribute="leading" secondItem="fRI-Je-PJu" secondAttribute="leading" constant="20" id="TXk-Y3-iXV"/>
+                                            <constraint firstItem="DNl-3f-6EA" firstAttribute="leading" secondItem="fRI-Je-PJu" secondAttribute="leading" constant="20" id="Ttz-AB-aNU"/>
+                                            <constraint firstItem="bLt-Zs-spZ" firstAttribute="top" secondItem="Pct-92-zlx" secondAttribute="bottom" constant="20" id="VhI-jY-xDa"/>
+                                            <constraint firstItem="DmF-Zg-Nmo" firstAttribute="leading" secondItem="fRI-Je-PJu" secondAttribute="leading" constant="20" id="b4P-u2-I2L"/>
+                                            <constraint firstItem="0Xl-z2-3PJ" firstAttribute="leading" secondItem="fRI-Je-PJu" secondAttribute="leading" constant="20" id="bA0-bO-WNe"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pct-92-zlx" secondAttribute="trailing" constant="20" id="e5L-7G-Vn8"/>
+                                            <constraint firstItem="bLt-Zs-spZ" firstAttribute="leading" secondItem="fRI-Je-PJu" secondAttribute="leading" constant="20" id="fsa-uh-Bu5"/>
+                                            <constraint firstItem="uSy-wP-ioV" firstAttribute="leading" secondItem="fRI-Je-PJu" secondAttribute="leading" constant="20" id="k78-Wk-dDQ"/>
+                                            <constraint firstItem="cKG-FU-2mN" firstAttribute="top" secondItem="uSy-wP-ioV" secondAttribute="bottom" constant="5" id="ldG-8j-kJU"/>
+                                            <constraint firstItem="3YP-Jq-vWq" firstAttribute="top" secondItem="fRI-Je-PJu" secondAttribute="top" id="m0Q-s6-7b1"/>
+                                            <constraint firstAttribute="bottom" secondItem="bLt-Zs-spZ" secondAttribute="bottom" constant="20" id="mf1-eP-CYp"/>
+                                            <constraint firstItem="WhK-jk-inM" firstAttribute="centerY" secondItem="bLt-Zs-spZ" secondAttribute="centerY" id="oiS-zz-qPo"/>
+                                            <constraint firstAttribute="trailing" secondItem="cKG-FU-2mN" secondAttribute="trailing" constant="20" id="pdf-q9-CmK"/>
+                                            <constraint firstAttribute="trailing" secondItem="nDV-aw-Cdd" secondAttribute="trailing" constant="20" id="rL6-sk-Ukt"/>
+                                            <constraint firstItem="uSy-wP-ioV" firstAttribute="top" secondItem="jww-Lb-qKF" secondAttribute="bottom" constant="10" id="ssd-ct-lZy"/>
+                                            <constraint firstItem="jww-Lb-qKF" firstAttribute="top" secondItem="DmF-Zg-Nmo" secondAttribute="bottom" constant="5" id="vGM-ga-mfr"/>
+                                            <constraint firstItem="Pct-92-zlx" firstAttribute="top" secondItem="nDV-aw-Cdd" secondAttribute="bottom" constant="20" id="zbW-U6-gXy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fRI-Je-PJu" secondAttribute="trailing" id="1GP-mc-gk8"/>
+                                    <constraint firstItem="fRI-Je-PJu" firstAttribute="top" secondItem="Qqy-3t-iAz" secondAttribute="top" id="jyM-uY-uCu"/>
+                                    <constraint firstItem="fRI-Je-PJu" firstAttribute="leading" secondItem="Qqy-3t-iAz" secondAttribute="leading" id="l2H-PX-zYG"/>
+                                    <constraint firstAttribute="bottom" secondItem="fRI-Je-PJu" secondAttribute="bottom" id="vrc-Gz-TRA"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dZX-3B-5x9"/>
+                        <color key="backgroundColor" name="AppSecondary"/>
+                        <constraints>
+                            <constraint firstItem="fRI-Je-PJu" firstAttribute="width" secondItem="Dar-Fr-BUf" secondAttribute="width" id="2Jf-kI-6EJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Qqy-3t-iAz" secondAttribute="bottom" id="Bpw-UE-m5o"/>
+                            <constraint firstItem="BDS-Ij-1Ip" firstAttribute="top" secondItem="dZX-3B-5x9" secondAttribute="top" constant="10" id="EMc-Un-lwK"/>
+                            <constraint firstAttribute="trailing" secondItem="Qqy-3t-iAz" secondAttribute="trailing" id="K4H-VE-Tbs"/>
+                            <constraint firstItem="Qqy-3t-iAz" firstAttribute="leading" secondItem="Dar-Fr-BUf" secondAttribute="leading" id="QUY-6V-tnP"/>
+                            <constraint firstItem="dZX-3B-5x9" firstAttribute="trailing" secondItem="XPn-qf-K9j" secondAttribute="trailing" constant="20" id="b4A-p8-oDI"/>
+                            <constraint firstItem="Qqy-3t-iAz" firstAttribute="top" secondItem="BDS-Ij-1Ip" secondAttribute="bottom" constant="20" id="dfj-RE-h4I"/>
+                            <constraint firstItem="XPn-qf-K9j" firstAttribute="centerY" secondItem="BDS-Ij-1Ip" secondAttribute="centerY" id="hdM-gY-k8Y"/>
+                            <constraint firstItem="BDS-Ij-1Ip" firstAttribute="leading" secondItem="dZX-3B-5x9" secondAttribute="leading" constant="20" id="nxw-6H-5HO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgvIcon" destination="vqq-gG-qQL" id="6ZG-YA-9FY"/>
+                        <outlet property="imgvProfilePic" destination="3YP-Jq-vWq" id="fa6-YX-ecb"/>
+                        <outlet property="lblBio" destination="cKG-FU-2mN" id="cec-Al-qWO"/>
+                        <outlet property="lblCity" destination="1Om-Zh-8V0" id="5NL-fS-tT0"/>
+                        <outlet property="lblCurrentTemp" destination="d6t-ao-qJK" id="yJ6-Ab-Lxh"/>
+                        <outlet property="lblEmailId" destination="jww-Lb-qKF" id="ts5-cy-5Xg"/>
+                        <outlet property="lblFullname" destination="DNl-3f-6EA" id="u3D-Yv-J5p"/>
+                        <outlet property="lblHighLowTemp" destination="xxm-Sx-sGh" id="DIb-aE-faY"/>
+                        <outlet property="lblHumidity" destination="8WK-NM-onC" id="rgg-Od-xI7"/>
+                        <outlet property="lblNoWeatherData" destination="WhK-jk-inM" id="kqs-7h-yoK"/>
+                        <outlet property="lblSunriseTime" destination="r0B-iI-hOD" id="cld-cd-UmZ"/>
+                        <outlet property="lblSunsetTime" destination="aQJ-hf-MkV" id="DTJ-u4-Azd"/>
+                        <outlet property="lblTime" destination="rMM-as-Z2G" id="qqr-ga-Plj"/>
+                        <outlet property="lblWeather" destination="CDg-OQ-oB0" id="JmV-Yn-3JK"/>
+                        <outlet property="lblWindSpeed" destination="48S-rj-pSk" id="Qt0-Pp-9oq"/>
+                        <outlet property="scrollView" destination="Qqy-3t-iAz" id="bjj-CQ-7ks"/>
+                        <outlet property="txtSearch" destination="Pct-92-zlx" id="xmk-E8-SL8"/>
+                        <outlet property="vMain" destination="fRI-Je-PJu" id="LZx-73-hwp"/>
+                        <outlet property="vWeather" destination="bLt-Zs-spZ" id="iAs-uA-hzq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xnf-lJ-izY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="676"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_back" width="32" height="32"/>
+        <image name="ic_camera" width="32" height="32"/>
+        <image name="ic_logout" width="32" height="32"/>
+        <image name="ic_profile" width="96" height="96"/>
+        <namedColor name="AppGray">
+            <color red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppPrimary">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppRed">
+            <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppSecondary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -9,7 +9,14 @@ import UIKit
 class DesignableView: UIView {
 }
 
+private var bottomLineColorAssociatedKey : UIColor = .black
+private var topLineColorAssociatedKey : UIColor = .black
+private var rightLineColorAssociatedKey : UIColor = .black
+private var leftLineColorAssociatedKey : UIColor = .black
+
+//MARK: - UIView Extension
 extension UIView {
+
     class func initFromNib<T: UIView>() -> T? {
         return Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)?[0] as? T
     }
@@ -110,40 +117,6 @@ extension UIView {
             }
         }
     }
-}
-
-class ShadowView : UIView {
-
-    @IBInspectable
-    var cornerShadowRadius : CGFloat = 20.0
-
-    var shadowLayer: CAShapeLayer!
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        if shadowLayer == nil {
-            shadowLayer = CAShapeLayer()
-            shadowLayer.path = UIBezierPath(rect: bounds).cgPath
-            shadowLayer.fillColor = UIColor.clear.cgColor
-
-            shadowLayer.shadowColor = UIColor.darkGray.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-            shadowLayer.shadowOpacity = 0.6
-            shadowLayer.shadowRadius = 4
-
-            layer.insertSublayer(shadowLayer, at: 0)
-        }
-    }
-}
-
-private var bottomLineColorAssociatedKey : UIColor = .black
-private var topLineColorAssociatedKey : UIColor = .black
-private var rightLineColorAssociatedKey : UIColor = .black
-private var leftLineColorAssociatedKey : UIColor = .black
-
-extension UIView {
 
     @IBInspectable var bottomLineColor: UIColor {
         get {

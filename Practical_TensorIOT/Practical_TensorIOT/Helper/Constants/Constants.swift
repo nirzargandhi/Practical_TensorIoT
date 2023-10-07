@@ -15,6 +15,8 @@ enum AllStoryBoard {
 enum ViewControllerName {
 
     static let kSignInVC = "SignInVC"
+    static let kSignUpVC = "SignUpVC"
+    static let kDashboardVC = "DashboardVC"
 }
 
 //MARK: - Cell Identifiers

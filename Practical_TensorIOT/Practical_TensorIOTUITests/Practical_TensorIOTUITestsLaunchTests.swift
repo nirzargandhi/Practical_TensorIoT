@@ -2,8 +2,6 @@
 //  Practical_TensorIOTUITestsLaunchTests.swift
 //  Practical_TensorIOTUITests
 //
-//  Created by Nirzar Gandhi on 07/10/23.
-//
 
 import XCTest
 
