@@ -6,19 +6,13 @@
 import Foundation
 import UIKit
 
-//MARK: - Variable Declaration
-let ScreenWidth = UIScreen.main.bounds.width
-let ScreenHeight = UIScreen.main.bounds.height
-
-let appDelegate = UIApplication.shared.delegate as? AppDelegate
-
 //MARK: - Utility Struct
 struct Utility {
 
     //MARK: - Dynamic Toast Message
     func dynamicToastMessage(strImage : String = "ic_info", strMessage : String) {
 
-        guard let window = appDelegate?.window else {
+        guard let window = GlobalVariables.shared.appDelegate?.window else {
             return
         }
 
@@ -26,7 +20,7 @@ struct Utility {
             return
         }
 
-        mainThread {
+        DispatchQueue.main.async {
             let imgvIcon = UIImageView()
             imgvIcon.contentMode = .scaleAspectFit
             imgvIcon.image = UIImage(named: strImage)
@@ -39,7 +33,7 @@ struct Utility {
             lblMessage.backgroundColor = .clear
             lblMessage.numberOfLines = 0
             lblMessage.lineBreakMode = .byWordWrapping
-            lblMessage.font = Fonts.InterRegular14
+            lblMessage.font = AppConstants.Designs.Fonts.InterRegular14
             lblMessage.textAlignment = .natural
             lblMessage.textColor = .appToastMessageFontColor()
             lblMessage.text = strMessage
@@ -51,12 +45,12 @@ struct Utility {
             vMessage.clipsToBounds = true
             vMessage.backgroundColor = .appToastMessageBgColor()
 
-            let labelSizeWithFixedWith = CGSize(width: ScreenWidth - 72.0, height: CGFloat.greatestFiniteMagnitude)
+            let labelSizeWithFixedWith = CGSize(width: GlobalVariables.shared.ScreenWidth - 72.0, height: CGFloat.greatestFiniteMagnitude)
             let exactLabelsize = lblMessage.sizeThatFits(labelSizeWithFixedWith)
             lblMessage.frame = CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: exactLabelsize)
 
             let sizeLblMessage : CGSize = lblMessage.intrinsicContentSize
-            vMessage.frame = CGRect(x: 8.0, y: window.safeAreaInsets.top + 24.0, width: ScreenWidth - 16.0, height: lblMessage.frame.height + sizeLblMessage.height + 8.0)
+            vMessage.frame = CGRect(x: 8.0, y: window.safeAreaInsets.top + 24.0, width: GlobalVariables.shared.ScreenWidth - 16.0, height: lblMessage.frame.height + sizeLblMessage.height + 8.0)
 
             vMessage.addSubview(imgvIcon)
             vMessage.addSubview(lblMessage)
@@ -103,25 +97,10 @@ struct Utility {
 
     //MARK: - Set Root SignInVC Method
     func setRootSignInVC() {
-        let objSignInVC = AllStoryBoard.Main.instantiateViewController(withIdentifier: ViewControllerName.kSignInVC) as? SignInVC
+        let objSignInVC = AppConstants.AllStoryBoard.Main.instantiateViewController(withIdentifier: AppConstants.ViewControllerName.kSignInVC) as? SignInVC
         let navigationViewController = UINavigationController(rootViewController: objSignInVC!)
-        appDelegate?.window?.rootViewController = navigationViewController
-        appDelegate?.window?.makeKeyAndVisible()
+        GlobalVariables.shared.appDelegate?.window?.rootViewController = navigationViewController
+        GlobalVariables.shared.appDelegate?.window?.makeKeyAndVisible()
     }
 }
 
-//MARK: - Main Thread Method
-func mainThread(_ completion: @escaping () -> ()) {
-
-    DispatchQueue.main.async {
-        completion()
-    }
-}
-
-//MARK: - Platform
-struct Platform {
-
-    static var isSimulator: Bool {
-        return TARGET_OS_SIMULATOR != 0
-    }
-}

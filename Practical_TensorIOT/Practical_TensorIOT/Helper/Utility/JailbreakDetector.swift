@@ -5,6 +5,14 @@
 
 import UIKit
 
+//MARK: - Platform
+struct Platform {
+
+    static var isSimulator: Bool {
+        return TARGET_OS_SIMULATOR != 0
+    }
+}
+
 //MARK: - JailbreakDetector Class
 public class JailbreakDetector {
 
@@ -74,5 +82,3 @@ public class JailbreakDetector {
         ]
     }
 }
-
-
