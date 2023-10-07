@@ -8,10 +8,6 @@ import UIKit
 //MARK: - UITextField Delegate Extension
 extension SignInVC : UITextFieldDelegate {
 
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        hideValidMessage()
-    }
-
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         if textField.returnKeyType == UIReturnKeyType.next {

@@ -4,15 +4,14 @@
 //
 
 import UIKit
+import FirebaseAuth
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
 
     //MARK: - UITextField Outlets
     @IBOutlet weak var txtEmailId: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-
-    //MARK: - UILabel Outlet
-    @IBOutlet weak var lblValidMessage: UILabel!
 
     //MARK: - UIButton Outlet
     @IBOutlet weak var btnSignIn: UIButton!
@@ -56,14 +55,19 @@ class SignInVC: UIViewController {
 
     //MARK: - UIButton Action Methods
     @IBAction func btnSignInAction(_ sender: Any) {
+
+        Utility().hideIQKeyboard()
+
+        if objSignInViewModel.checkValidations(emailId: txtEmailId, password: txtPassword) {
+            objSignInViewModel.wsSignIn(emailId: txtEmailId.text ?? "", password: txtPassword.text ?? "")
+        }
     }
 
     @IBAction func btnCreateAccountAction(_ sender: Any) {
-    }
 
-    //MARK: - Hide Valid Message Method
-    internal func hideValidMessage() {
-        lblValidMessage.text = ""
-        lblValidMessage.isHidden = true
+        Utility().hideIQKeyboard()
+
+        let objSignUpVC = AppConstants.AllStoryBoard.Main.instantiateViewController(withIdentifier: AppConstants.ViewControllerName.kSignUpVC) as! SignUpVC
+        self.navigationController?.pushViewController(objSignUpVC, animated: true)
     }
 }

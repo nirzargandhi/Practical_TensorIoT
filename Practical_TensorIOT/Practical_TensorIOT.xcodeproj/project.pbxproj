@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06592704AD2B3B4B6C9A3CB0 /* Pods_Practical_TensorIOT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C83CF374CFDB1CEBE72CB8A /* Pods_Practical_TensorIOT.framework */; };
+		E619BB5C2AD1FBBA006550D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E619BB5B2AD1FBB9006550D5 /* GoogleService-Info.plist */; };
+		E619BB5F2AD201C5006550D5 /* SignUpVC+ChoosePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB5E2AD201C5006550D5 /* SignUpVC+ChoosePicture.swift */; };
+		E619BB612AD201E6006550D5 /* SignUpVC+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB602AD201E6006550D5 /* SignUpVC+UITextFieldDelegate.swift */; };
+		E619BB642AD2024A006550D5 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB632AD2024A006550D5 /* SignUpViewModel.swift */; };
+		E619BB662AD2026F006550D5 /* SignUpVC+UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB652AD2026F006550D5 /* SignUpVC+UITextViewDelegate.swift */; };
+		E619BB692AD205A8006550D5 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB682AD205A8006550D5 /* UserDataModel.swift */; };
+		E619BB6B2AD20652006550D5 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB6A2AD20652006550D5 /* Encodable+Extension.swift */; };
+		E619BB6D2AD2069B006550D5 /* ImageVideoPicker+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB6C2AD2069B006550D5 /* ImageVideoPicker+Extension.swift */; };
+		E619BB6F2AD2071E006550D5 /* CameraAudioPermission+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB6E2AD2071E006550D5 /* CameraAudioPermission+Extension.swift */; };
+		E619BB712AD2099D006550D5 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB702AD2099D006550D5 /* UIApplication+Extension.swift */; };
 		E61B44FE2AD185FB001C3585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B44FD2AD185FB001C3585 /* AppDelegate.swift */; };
 		E61B450A2AD185FE001C3585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E61B45082AD185FE001C3585 /* LaunchScreen.storyboard */; };
 		E61B45152AD185FF001C3585 /* Practical_TensorIOTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B45142AD185FF001C3585 /* Practical_TensorIOTTests.swift */; };
@@ -61,6 +72,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0325BBA5BEE2B678DF071DB7 /* Pods-Practical_TensorIOT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practical_TensorIOT.release.xcconfig"; path = "Target Support Files/Pods-Practical_TensorIOT/Pods-Practical_TensorIOT.release.xcconfig"; sourceTree = "<group>"; };
+		1C83CF374CFDB1CEBE72CB8A /* Pods_Practical_TensorIOT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practical_TensorIOT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B954A9A2B5CC9382483E8AEA /* Pods-Practical_TensorIOT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practical_TensorIOT.debug.xcconfig"; path = "Target Support Files/Pods-Practical_TensorIOT/Pods-Practical_TensorIOT.debug.xcconfig"; sourceTree = "<group>"; };
+		E619BB5B2AD1FBB9006550D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E619BB5E2AD201C5006550D5 /* SignUpVC+ChoosePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC+ChoosePicture.swift"; sourceTree = "<group>"; };
+		E619BB602AD201E6006550D5 /* SignUpVC+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		E619BB632AD2024A006550D5 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		E619BB652AD2026F006550D5 /* SignUpVC+UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC+UITextViewDelegate.swift"; sourceTree = "<group>"; };
+		E619BB682AD205A8006550D5 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		E619BB6A2AD20652006550D5 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		E619BB6C2AD2069B006550D5 /* ImageVideoPicker+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageVideoPicker+Extension.swift"; sourceTree = "<group>"; };
+		E619BB6E2AD2071E006550D5 /* CameraAudioPermission+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraAudioPermission+Extension.swift"; sourceTree = "<group>"; };
+		E619BB702AD2099D006550D5 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		E61B44FA2AD185FB001C3585 /* Practical_TensorIOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practical_TensorIOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61B44FD2AD185FB001C3585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E61B45092AD185FE001C3585 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06592704AD2B3B4B6C9A3CB0 /* Pods_Practical_TensorIOT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,9 +151,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49EA7A2C15074C9B2C74CCE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C83CF374CFDB1CEBE72CB8A /* Pods_Practical_TensorIOT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B615C480C088B5F93FFD509D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B954A9A2B5CC9382483E8AEA /* Pods-Practical_TensorIOT.debug.xcconfig */,
+				0325BBA5BEE2B678DF071DB7 /* Pods-Practical_TensorIOT.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E619BB622AD2022D006550D5 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				E619BB632AD2024A006550D5 /* SignUpViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		E619BB672AD20595006550D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E619BB682AD205A8006550D5 /* UserDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E61B44F12AD185FB001C3585 = {
 			isa = PBXGroup;
 			children = (
+				49EA7A2C15074C9B2C74CCE2 /* Frameworks */,
+				B615C480C088B5F93FFD509D /* Pods */,
 				E61B44FC2AD185FB001C3585 /* Practical_TensorIOT */,
 				E61B45132AD185FF001C3585 /* Practical_TensorIOTTests */,
 				E61B451D2AD185FF001C3585 /* Practical_TensorIOTUITests */,
@@ -195,12 +255,12 @@
 		E61B45312AD18728001C3585 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				E66D5D012AD1E2AA004A1D87 /* User Default */,
 				E61B45322AD18738001C3585 /* App Constants */,
 				E61B45352AD187C8001C3585 /* Extensions */,
 				E66D5CF92AD1DC05004A1D87 /* Global Variables */,
 				E64411B32AD1AE7900BA76AF /* Network Calls */,
 				E61B455B2AD18AC2001C3585 /* Plist Files */,
+				E66D5D012AD1E2AA004A1D87 /* User Default */,
 				E61B453C2AD1889C001C3585 /* Utility */,
 			);
 			path = Helper;
@@ -218,6 +278,10 @@
 			isa = PBXGroup;
 			children = (
 				E61B45362AD187DC001C3585 /* AppDelegate+Configuration.swift */,
+				E619BB6E2AD2071E006550D5 /* CameraAudioPermission+Extension.swift */,
+				E619BB6A2AD20652006550D5 /* Encodable+Extension.swift */,
+				E619BB6C2AD2069B006550D5 /* ImageVideoPicker+Extension.swift */,
+				E619BB702AD2099D006550D5 /* UIApplication+Extension.swift */,
 				E61B455C2AD18B2F001C3585 /* UIColor+Extension.swift */,
 				E64411B12AD1AC4800BA76AF /* UITextField+Extension.swift */,
 				E61B45382AD18808001C3585 /* UIView+Extension.swift */,
@@ -280,6 +344,7 @@
 		E61B455B2AD18AC2001C3585 /* Plist Files */ = {
 			isa = PBXGroup;
 			children = (
+				E619BB5B2AD1FBB9006550D5 /* GoogleService-Info.plist */,
 				E61B450B2AD185FE001C3585 /* Info.plist */,
 			);
 			path = "Plist Files";
@@ -298,8 +363,8 @@
 		E61B455F2AD18F6D001C3585 /* Sign In */ = {
 			isa = PBXGroup;
 			children = (
-				E66D5CFE2AD1DFF0004A1D87 /* ViewModel */,
 				E61B45602AD18F77001C3585 /* Controller */,
+				E66D5CFE2AD1DFF0004A1D87 /* View Model */,
 			);
 			path = "Sign In";
 			sourceTree = "<group>";
@@ -317,6 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				E64411AA2AD1A85B00BA76AF /* Controller */,
+				E619BB672AD20595006550D5 /* Model */,
+				E619BB622AD2022D006550D5 /* View Model */,
 			);
 			path = "Sign Up";
 			sourceTree = "<group>";
@@ -325,6 +392,9 @@
 			isa = PBXGroup;
 			children = (
 				E64411AB2AD1A87000BA76AF /* SignUpVC.swift */,
+				E619BB5E2AD201C5006550D5 /* SignUpVC+ChoosePicture.swift */,
+				E619BB602AD201E6006550D5 /* SignUpVC+UITextFieldDelegate.swift */,
+				E619BB652AD2026F006550D5 /* SignUpVC+UITextViewDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -362,12 +432,12 @@
 			path = "Global Variables";
 			sourceTree = "<group>";
 		};
-		E66D5CFE2AD1DFF0004A1D87 /* ViewModel */ = {
+		E66D5CFE2AD1DFF0004A1D87 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
 				E66D5CFF2AD1E1A7004A1D87 /* SignInViewModel.swift */,
 			);
-			path = ViewModel;
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		E66D5D012AD1E2AA004A1D87 /* User Default */ = {
@@ -385,17 +455,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E61B45242AD185FF001C3585 /* Build configuration list for PBXNativeTarget "Practical_TensorIOT" */;
 			buildPhases = (
+				58F7AC3ECBCB6C1E04FA0D57 /* [CP] Check Pods Manifest.lock */,
 				E61B44F62AD185FB001C3585 /* Sources */,
 				E61B44F72AD185FB001C3585 /* Frameworks */,
 				E61B44F82AD185FB001C3585 /* Resources */,
+				EEF8EBFEE36695CB618C8984 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Practical_TensorIOT;
-			packageProductDependencies = (
-			);
 			productName = Practical_TensorIOT;
 			productReference = E61B44FA2AD185FB001C3585 /* Practical_TensorIOT.app */;
 			productType = "com.apple.product-type.application";
@@ -468,8 +538,6 @@
 				Base,
 			);
 			mainGroup = E61B44F12AD185FB001C3585;
-			packageReferences = (
-			);
 			productRefGroup = E61B44FB2AD185FB001C3585 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -499,6 +567,7 @@
 				E61B45582AD18A6D001C3585 /* Inter-ExtraLight.ttf in Resources */,
 				E61B450A2AD185FE001C3585 /* LaunchScreen.storyboard in Resources */,
 				E61B45542AD18A6D001C3585 /* Inter-Thin.ttf in Resources */,
+				E619BB5C2AD1FBBA006550D5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +587,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		58F7AC3ECBCB6C1E04FA0D57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Practical_TensorIOT-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEF8EBFEE36695CB618C8984 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Practical_TensorIOT/Pods-Practical_TensorIOT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Practical_TensorIOT/Pods-Practical_TensorIOT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Practical_TensorIOT/Pods-Practical_TensorIOT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E61B44F62AD185FB001C3585 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -527,20 +638,29 @@
 				E61B45372AD187DC001C3585 /* AppDelegate+Configuration.swift in Sources */,
 				E61B45622AD18F8F001C3585 /* SignInVC.swift in Sources */,
 				E61B453E2AD188A9001C3585 /* Utility.swift in Sources */,
+				E619BB712AD2099D006550D5 /* UIApplication+Extension.swift in Sources */,
 				E66D5D002AD1E1A7004A1D87 /* SignInViewModel.swift in Sources */,
 				E66D5CFB2AD1DC14004A1D87 /* GlobalVariables.swift in Sources */,
 				E66D5CFD2AD1DFC6004A1D87 /* SignInVC+UITextFieldDelegate.swift in Sources */,
 				E64411B02AD1A9E900BA76AF /* DashboardVC.swift in Sources */,
+				E619BB6F2AD2071E006550D5 /* CameraAudioPermission+Extension.swift in Sources */,
 				E61B45402AD18A2D001C3585 /* JailbreakDetector.swift in Sources */,
+				E619BB612AD201E6006550D5 /* SignUpVC+UITextFieldDelegate.swift in Sources */,
 				E61B45392AD18808001C3585 /* UIView+Extension.swift in Sources */,
 				E61B453B2AD18842001C3585 /* UIViewController+Extension.swift in Sources */,
 				E64411B52AD1AF5800BA76AF /* NetworkCheck.swift in Sources */,
+				E619BB642AD2024A006550D5 /* SignUpViewModel.swift in Sources */,
+				E619BB692AD205A8006550D5 /* UserDataModel.swift in Sources */,
 				E66D5D082AD1ECF1004A1D87 /* APIManager.swift in Sources */,
 				E66D5D032AD1E2BE004A1D87 /* UserDefault.swift in Sources */,
+				E619BB6B2AD20652006550D5 /* Encodable+Extension.swift in Sources */,
 				E64411B22AD1AC4800BA76AF /* UITextField+Extension.swift in Sources */,
+				E619BB5F2AD201C5006550D5 /* SignUpVC+ChoosePicture.swift in Sources */,
 				E66D5CF82AD1D545004A1D87 /* AppConstants.swift in Sources */,
 				E64411AC2AD1A87000BA76AF /* SignUpVC.swift in Sources */,
 				E61B455D2AD18B2F001C3585 /* UIColor+Extension.swift in Sources */,
+				E619BB662AD2026F006550D5 /* SignUpVC+UITextViewDelegate.swift in Sources */,
+				E619BB6D2AD2069B006550D5 /* ImageVideoPicker+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,14 +829,20 @@
 		};
 		E61B45252AD185FF001C3585 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B954A9A2B5CC9382483E8AEA /* Pods-Practical_TensorIOT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Practical_TensorIOT/Helper/Plist Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tensor IOT";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Practical_TensorIOT would like to access your camera for an image uploading";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Practical_TensorIOT would like to access your gallery for an image uploading";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Practical_TensorIOT would like to access your gallery for an image uploading";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -728,8 +854,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Practical-TensorIOT";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tensorIoT.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -741,14 +868,20 @@
 		};
 		E61B45262AD185FF001C3585 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0325BBA5BEE2B678DF071DB7 /* Pods-Practical_TensorIOT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Practical_TensorIOT/Helper/Plist Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tensor IOT";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Practical_TensorIOT would like to access your camera for an image uploading";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Practical_TensorIOT would like to access your gallery for an image uploading";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Practical_TensorIOT would like to access your gallery for an image uploading";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -760,8 +893,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Practical-TensorIOT";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tensorIoT.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -776,13 +910,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Practical-TensorIOTTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tensorIoT.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -795,13 +931,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Practical-TensorIOTTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tensorIoT.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -813,12 +951,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Practical-TensorIOTUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tensorIoT.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -830,12 +970,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Practical-TensorIOTUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tensorIoT.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

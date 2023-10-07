@@ -4,10 +4,34 @@
 //
 
 import Foundation
+import IQKeyboardManagerSwift
+import MBProgressHUD
 import UIKit
 
 //MARK: - Utility Struct
 struct Utility {
+
+    //MARK: - Show/Hide Loader Method
+    func showLoader() {
+
+        var hud = GlobalVariables.shared.hud
+
+        DispatchQueue.main.async {
+            hud = MBProgressHUD.showAdded(to: UIApplication.shared.windows.first(where: { $0.isKeyWindow })!, animated: true)
+            hud.mode = .indeterminate
+            hud.bezelView.color = .clear
+            hud.bezelView.style = .solidColor
+            hud.contentColor = .appPrimaryColor()
+
+            UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.addSubview(hud)
+        }
+    }
+
+    func hideLoader() {
+        DispatchQueue.main.async {
+            GlobalVariables.shared.hud.removeFromSuperview()
+        }
+    }
 
     //MARK: - Dynamic Toast Message
     func dynamicToastMessage(strImage : String = "ic_info", strMessage : String) {
@@ -101,6 +125,19 @@ struct Utility {
         let navigationViewController = UINavigationController(rootViewController: objSignInVC!)
         GlobalVariables.shared.appDelegate?.window?.rootViewController = navigationViewController
         GlobalVariables.shared.appDelegate?.window?.makeKeyAndVisible()
+    }
+
+    //MARK: - Set Root DashboardVC Method
+    func setRootDashboardVC() {
+        let objDashboardVC = AppConstants.AllStoryBoard.Main.instantiateViewController(withIdentifier: AppConstants.ViewControllerName.kDashboardVC) as? DashboardVC
+        let navigationViewController = UINavigationController(rootViewController: objDashboardVC!)
+        GlobalVariables.shared.appDelegate?.window?.rootViewController = navigationViewController
+        GlobalVariables.shared.appDelegate?.window?.makeKeyAndVisible()
+    }
+
+    //MARK: - Hide IQKeyboard Method
+    func hideIQKeyboard() {
+        IQKeyboardManager.shared.resignFirstResponder()
     }
 }
 

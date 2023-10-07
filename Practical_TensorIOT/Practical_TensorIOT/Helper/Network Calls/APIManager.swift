@@ -3,6 +3,7 @@
 //  Practical_TensorIOT
 //
 
+import FirebaseAuth
 import Foundation
 
 //MARK: - API Manager
@@ -15,6 +16,30 @@ struct APIManager {
         case unableToComplete
         case invalidResponse
         case invalidData
+    }
+
+    static func apiFirebaseSignUp(strEmail : String, strPassword : String, completion : @escaping (_ success: Bool, _ object: AnyObject?, _ error: Error?) -> ()) {
+
+        Auth.auth().createUser(withEmail: strEmail, password: strPassword) { (authResult, error) in
+
+            if error == nil {
+                completion(true, authResult, error)
+            } else {
+                completion(false, authResult, error)
+            }
+        }
+    }
+
+    static func apiFirebaseSignIn(strEmail : String, strPassword : String, completion : @escaping (_ success: Bool, _ object: AnyObject?, _ error: Error?) -> ()) {
+
+        Auth.auth().signIn(withEmail: strEmail, password: strPassword) { (authResult, error) in
+
+            if error == nil {
+                completion(true, authResult, error)
+            } else {
+                completion(false, authResult, error)
+            }
+        }
     }
 
     //MARK: API Call Method

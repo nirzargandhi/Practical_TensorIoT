@@ -19,13 +19,11 @@ class SignUpVC: UIViewController {
     //MARK: - UITextView Outlet
     @IBOutlet weak var tvBio: UITextView!
 
-    //MARK: - UILabel Outlet
-    @IBOutlet weak var lblValidMessage: UILabel!
-
     //MARK: - UIButton Outlet
     @IBOutlet weak var btnSignUp: UIButton!
 
     //MARK: - Variable Declaration
+    lazy var objSignUpViewModel = SignUpViewModel()
     var dataProfilePic : Data?
 
     //MARK: - ViewController Method
@@ -40,16 +38,27 @@ class SignUpVC: UIViewController {
 
         hideNavigationBar(isTabbar: false)
 
-        //tvBio.contentInset = UIEdgeInsets(top: 0, left: kPlaceholderTextViewInsetSpan, bottom: 0, right: kPlaceholderTextViewInsetSpan)
+        tvBio.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
 
     //MARK: - UIButton Action Methods
     @IBAction func btnBackAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func btnAddProfilePicAction(_ sender: Any) {
+
+        Utility().hideIQKeyboard()
+
+        takeAndChoosePhoto()
     }
 
     @IBAction func btnSignUpAction(_ sender: Any) {
+
+        Utility().hideIQKeyboard()
+
+        if objSignUpViewModel.checkValidations(name: txtFullName, username: txtUsername, emailId: txtEmailId, password: txtPassword, bio: tvBio) {
+            objSignUpViewModel.wsSignUp(name: txtFullName.text ?? "", username: txtUsername.text ?? "", emailId: txtEmailId.text ?? "", password: txtPassword.text ?? "", bio: tvBio.text ?? "", profilePic: dataProfilePic ?? nil)
+        }
     }
 }
