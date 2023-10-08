@@ -59,7 +59,17 @@ class SignInVC: UIViewController {
         Utility().hideIQKeyboard()
 
         if objSignInViewModel.checkValidations(emailId: txtEmailId, password: txtPassword) {
-            objSignInViewModel.wsSignIn(emailId: txtEmailId.text ?? "", password: txtPassword.text ?? "")
+            objSignInViewModel.wsSignIn(emailId: txtEmailId.text ?? "", password: txtPassword.text ?? "") { [weak self] success in
+
+                guard self != nil else { return }
+
+                if success {
+                    let objDashboardVC = AppConstants.AllStoryBoard.Main.instantiateViewController(withIdentifier: AppConstants.ViewControllerName.kDashboardVC) as? DashboardVC
+                    let navigationViewController = UINavigationController(rootViewController: objDashboardVC!)
+                    GlobalVariables.shared.appDelegate?.window?.rootViewController = navigationViewController
+                    GlobalVariables.shared.appDelegate?.window?.makeKeyAndVisible()
+                }
+            }
         }
     }
 

@@ -54,7 +54,11 @@ class SignUpViewModel {
             return
         }
 
+        Utility().showLoader()
+
         APIManager.apiFirebaseSignUp(strEmail: emailId, strPassword: password) { [weak self] (success, responseData, error)  in
+
+            Utility().hideLoader()
 
             guard let self else { return }
 

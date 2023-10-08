@@ -40,16 +40,20 @@ class SignInViewModel {
     }
 
     //MARK: - Webservice SignIn Method
-    internal func wsSignIn(emailId: String, password: String) {
+    internal func wsSignIn(emailId: String, password: String, completion: @escaping (_ success: Bool) -> ()) {
 
         guard case NetworkCheck.isConnectedToNetwork() = true else {
             Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgNetworkConnection)
             return
         }
 
+        Utility().showLoader()
+
         APIManager.apiFirebaseSignIn(strEmail: emailId, strPassword: password) { [weak self] (success, responseData, error)  in
 
-            guard let self else { return }
+            Utility().hideLoader()
+
+            guard self != nil else { return }
 
             if success, let dictUserDetails = Auth.auth().currentUser {
 
@@ -60,8 +64,7 @@ class SignInViewModel {
 
                 UserDefault().setUserDefault(true, key: AppConstants.UserDefaultKeys.kIsKeyChain)
 
-                Utility().setRootDashboardVC()
-
+                completion(true)
             } else if let error = error as NSError?, let authErrorCode = AuthErrorCode.Code(rawValue: error.code) {
 
                 switch authErrorCode {
@@ -81,6 +84,8 @@ class SignInViewModel {
                 default:
                     Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgSignInFailed)
                 }
+
+                completion(false)
             }
         }
     }

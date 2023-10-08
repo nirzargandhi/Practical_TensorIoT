@@ -9,16 +9,18 @@ import Foundation
 //MARK: - API Manager
 struct APIManager {
 
-    //MARK: API error enum
+    //MARK: API error Enum
     enum APIErrors: Error {
 
         case invalidURL
         case unableToComplete
-        case invalidResponse
+        case unAuthorized
         case invalidData
+        case invalidResponse
     }
 
-    static func apiFirebaseSignUp(strEmail : String, strPassword : String, completion : @escaping (_ success: Bool, _ object: AnyObject?, _ error: Error?) -> ()) {
+    //MARK: - Firebase API Call Methods
+    static func apiFirebaseSignUp(strEmail: String, strPassword: String, completion: @escaping (_ success: Bool, _ object: AnyObject?, _ error: Error?) -> ()) {
 
         Auth.auth().createUser(withEmail: strEmail, password: strPassword) { (authResult, error) in
 
@@ -30,7 +32,7 @@ struct APIManager {
         }
     }
 
-    static func apiFirebaseSignIn(strEmail : String, strPassword : String, completion : @escaping (_ success: Bool, _ object: AnyObject?, _ error: Error?) -> ()) {
+    static func apiFirebaseSignIn(strEmail: String, strPassword: String, completion: @escaping (_ success: Bool, _ object: AnyObject?, _ error: Error?) -> ()) {
 
         Auth.auth().signIn(withEmail: strEmail, password: strPassword) { (authResult, error) in
 
@@ -43,7 +45,7 @@ struct APIManager {
     }
 
     //MARK: API Call Method
-    static func apiCall(apiUrl: String, method: String, completionHander: @escaping (Result<Data, APIErrors>) -> Void) {
+    static func apiCall<A>(apiUrl: String, method: String, requestPARAMS: [String: A], completionHander: @escaping (Result<Data, APIErrors>) -> Void) {
 
         let headers = [
             "content-type": "application/json",
@@ -59,19 +61,27 @@ struct APIManager {
         request.httpMethod = method
         request.allHTTPHeaderFields = headers
 
+        let jsonTodo: NSData
+        do {
+            jsonTodo = try JSONSerialization.data(withJSONObject: requestPARAMS, options: []) as NSData
+            request.httpBody = jsonTodo as Data
+        } catch {
+            return
+        }
+
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
 
             if let _ = error {
                 completionHander(.failure(.unableToComplete))
             }
 
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completionHander(.failure(.invalidResponse))
+            guard let data = data else {
+                completionHander(.failure(.invalidData))
                 return
             }
 
-            guard let data = data else {
-                completionHander(.failure(.invalidData))
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completionHander(.failure(.invalidResponse))
                 return
             }
 

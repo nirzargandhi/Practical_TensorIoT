@@ -15,8 +15,8 @@ extension AppDelegate {
         setFirebase()
 
         setIQKeyboard()
-        
-        setRootController()
+
+        setRootSignInVC()
     }
 
     //MARK: - Set Firebase Method
@@ -31,9 +31,12 @@ extension AppDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = true
     }
 
-    //MARK: - Set Root Controller Method
-    func setRootController() {
-        Utility().setRootSignInVC()
+    //MARK: - Set Root SignInVC Method
+    func setRootSignInVC() {
+        let objSignInVC = AppConstants.AllStoryBoard.Main.instantiateViewController(withIdentifier: AppConstants.ViewControllerName.kSignInVC) as? SignInVC
+        let navigationViewController = UINavigationController(rootViewController: objSignInVC!)
+        GlobalVariables.shared.appDelegate?.window?.rootViewController = navigationViewController
+        GlobalVariables.shared.appDelegate?.window?.makeKeyAndVisible()
     }
 }
 

@@ -78,6 +78,18 @@ struct AppConstants {
         static let msgFirebaseWeakPassword = "Password must be 6 characters long or more"
         static let msgFirebaseVerifyEmail = "Please verify your email address"
         static let msgSignInFailed = "Sign in failed, could be a bad email or password or both. Please try again"
+
+        //API Invalid State Messages
+        static let msgInvalidUrlMessage = "Something is wrong in Api Url."
+        static let msgUnableToCompleteMessage = "Unable to complete the request. Try again."
+        static let msgInvalidResponseMessage = "Invalid response. Something went wrong."
+        static let msgInvalidDataMessage = "Invalid data received from server."
+    }
+
+    //MARK: - API Method Type
+    struct APIMethodType {
+
+        static let kPost = "POST"
     }
 
     //MARK: - Web Service URLs

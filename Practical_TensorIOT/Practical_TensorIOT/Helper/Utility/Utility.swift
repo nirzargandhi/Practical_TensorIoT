@@ -14,16 +14,14 @@ struct Utility {
     //MARK: - Show/Hide Loader Method
     func showLoader() {
 
-        var hud = GlobalVariables.shared.hud
-
         DispatchQueue.main.async {
-            hud = MBProgressHUD.showAdded(to: UIApplication.shared.windows.first(where: { $0.isKeyWindow })!, animated: true)
-            hud.mode = .indeterminate
-            hud.bezelView.color = .clear
-            hud.bezelView.style = .solidColor
-            hud.contentColor = .appPrimaryColor()
+            GlobalVariables.shared.hud = MBProgressHUD.showAdded(to: UIApplication.shared.windows.first(where: { $0.isKeyWindow })!, animated: true)
+            GlobalVariables.shared.hud.mode = .indeterminate
+            GlobalVariables.shared.hud.bezelView.color = .clear
+            GlobalVariables.shared.hud.bezelView.style = .solidColor
+            GlobalVariables.shared.hud.contentColor = .appPrimaryColor()
 
-            UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.addSubview(hud)
+            UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.addSubview(GlobalVariables.shared.hud)
         }
     }
 
@@ -117,22 +115,6 @@ struct Utility {
         }
 
         return dateFormatter!
-    }
-
-    //MARK: - Set Root SignInVC Method
-    func setRootSignInVC() {
-        let objSignInVC = AppConstants.AllStoryBoard.Main.instantiateViewController(withIdentifier: AppConstants.ViewControllerName.kSignInVC) as? SignInVC
-        let navigationViewController = UINavigationController(rootViewController: objSignInVC!)
-        GlobalVariables.shared.appDelegate?.window?.rootViewController = navigationViewController
-        GlobalVariables.shared.appDelegate?.window?.makeKeyAndVisible()
-    }
-
-    //MARK: - Set Root DashboardVC Method
-    func setRootDashboardVC() {
-        let objDashboardVC = AppConstants.AllStoryBoard.Main.instantiateViewController(withIdentifier: AppConstants.ViewControllerName.kDashboardVC) as? DashboardVC
-        let navigationViewController = UINavigationController(rootViewController: objDashboardVC!)
-        GlobalVariables.shared.appDelegate?.window?.rootViewController = navigationViewController
-        GlobalVariables.shared.appDelegate?.window?.makeKeyAndVisible()
     }
 
     //MARK: - Hide IQKeyboard Method
