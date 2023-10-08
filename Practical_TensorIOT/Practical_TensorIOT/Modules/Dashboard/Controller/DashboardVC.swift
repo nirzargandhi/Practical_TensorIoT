@@ -39,7 +39,6 @@ class DashboardVC: UIViewController {
 
     //MARK: - Variable Declaration
     lazy var objDashboardViewModel = DashboardViewModel()
-    var dictUserData : NSDictionary?
 
     //MARK: - ViewController Methods
     override func viewDidLoad() {
@@ -102,7 +101,7 @@ class DashboardVC: UIViewController {
     }
 
     //MARK: - Set Weather Data Method
-    internal func setWeatherData(search: String, isLoader: Bool = true) {
+    func setWeatherData(search: String, isLoader: Bool = true) {
 
         objDashboardViewModel.callWeatherAPI(strSearch: search, isLoader: isLoader) { [weak self] success, responseData  in
 

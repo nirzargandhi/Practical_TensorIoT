@@ -10,7 +10,7 @@ import Foundation
 class SignInViewModel {
 
     //MARK: - Fetch Credentials Method
-    internal func fetchCredentials() -> (emailId: String, password: String) {
+    func fetchCredentials() -> (emailId: String, password: String) {
 
         let strEmailID = UserDefaults.standard.string(forKey: AppConstants.UserDefaultKeys.kEmailID) ?? ""
 
@@ -20,7 +20,7 @@ class SignInViewModel {
     }
 
     //MARK: - Check Validations Method
-    internal func checkValidations(emailId: UITextField, password: UITextField) -> Bool {
+    func checkValidations(emailId: UITextField, password: UITextField) -> Bool {
 
         if emailId.isEmpty {
             Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgEmail)
@@ -40,7 +40,7 @@ class SignInViewModel {
     }
 
     //MARK: - Webservice SignIn Method
-    internal func wsSignIn(emailId: String, password: String, completion: @escaping (_ success: Bool) -> ()) {
+    func wsSignIn(emailId: String, password: String, completion: @escaping (_ success: Bool) -> ()) {
 
         guard case NetworkCheck.isConnectedToNetwork() = true else {
             Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgNetworkConnection)

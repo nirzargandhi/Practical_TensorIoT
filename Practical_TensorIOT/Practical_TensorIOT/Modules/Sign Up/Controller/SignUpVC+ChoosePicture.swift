@@ -22,7 +22,9 @@ extension SignUpVC : ChoosePicture, UIImagePickerControllerDelegate, UINavigatio
 
         imgvProfilePic.image = orientationFixedImage
 
-        dataProfilePic = orientationFixedImage.jpegData(compressionQuality: 0.5)
+        if let data = orientationFixedImage.jpegData(compressionQuality: 0.5) {
+            dataProfilePic = data
+        }
 
         picker.dismiss(animated: true)
     }

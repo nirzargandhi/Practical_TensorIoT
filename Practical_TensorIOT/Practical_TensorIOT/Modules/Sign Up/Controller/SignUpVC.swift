@@ -24,7 +24,7 @@ class SignUpVC: UIViewController {
 
     //MARK: - Variable Declaration
     lazy var objSignUpViewModel = SignUpViewModel()
-    var dataProfilePic : Data?
+    lazy var dataProfilePic = Data()
 
     //MARK: - ViewController Method
     override func viewDidLoad() {

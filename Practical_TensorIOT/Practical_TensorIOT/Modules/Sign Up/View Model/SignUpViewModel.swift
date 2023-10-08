@@ -12,7 +12,7 @@ import Foundation
 class SignUpViewModel {
 
     //MARK: - Check Validations Method
-    internal func checkValidations(name: UITextField, username: UITextField, emailId: UITextField, password: UITextField, bio: UITextView) -> Bool {
+    func checkValidations(name: UITextField, username: UITextField, emailId: UITextField, password: UITextField, bio: UITextView) -> Bool {
 
         if name.isEmpty {
             Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgFullName)
@@ -47,7 +47,7 @@ class SignUpViewModel {
     }
 
     //MARK: - Webservice SignUp Method
-    internal func wsSignUp(name: String, username: String, emailId: String, password: String, bio: String, profilePic: Data?, completion: @escaping (_ success: Bool) -> ()) {
+    func wsSignUp(name: String, username: String, emailId: String, password: String, bio: String, profilePic: Data?, completion: @escaping (_ success: Bool) -> ()) {
 
         guard case NetworkCheck.isConnectedToNetwork() = true else {
             Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgNetworkConnection)

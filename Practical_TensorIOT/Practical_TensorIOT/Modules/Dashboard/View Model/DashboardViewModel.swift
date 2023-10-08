@@ -9,11 +9,11 @@ import FirebaseDatabase
 class DashboardViewModel {
 
     //MARK: - Variable Declaration
-    var dictUserData: NSDictionary?
+    lazy var dictUserData = NSDictionary()
     var dictWeather : WeatherModel?
 
     //MARK: - Get User Data Method
-    internal func getUserData(completion: @escaping (_ success: Bool, _ object: NSDictionary?) -> ()) {
+    func getUserData(completion: @escaping (_ success: Bool, _ object: NSDictionary?) -> ()) {
 
         guard case NetworkCheck.isConnectedToNetwork() = true else {
             Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgNetworkConnection)
@@ -43,7 +43,7 @@ class DashboardViewModel {
     }
 
     //MARK: - Call Weather API Method
-    internal func callWeatherAPI(strSearch: String, isLoader: Bool, completion: @escaping (_ success: Bool, _ object: WeatherModel?) -> ()) {
+    func callWeatherAPI(strSearch: String, isLoader: Bool, completion: @escaping (_ success: Bool, _ object: WeatherModel?) -> ()) {
 
         guard case NetworkCheck.isConnectedToNetwork() = true else {
             Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgNetworkConnection)
