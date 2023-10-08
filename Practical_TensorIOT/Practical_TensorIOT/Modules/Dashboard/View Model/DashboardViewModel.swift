@@ -43,14 +43,16 @@ class DashboardViewModel {
     }
 
     //MARK: - Call Weather API Method
-    internal func callWeatherAPI(strSearch: String, completion: @escaping (_ success: Bool, _ object: WeatherModel?) -> ()) {
+    internal func callWeatherAPI(strSearch: String, isLoader: Bool, completion: @escaping (_ success: Bool, _ object: WeatherModel?) -> ()) {
 
         guard case NetworkCheck.isConnectedToNetwork() = true else {
             Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgNetworkConnection)
             return
         }
 
-        Utility().showLoader()
+        if isLoader {
+            Utility().showLoader()
+        }
 
         let strURL = "\(AppConstants.WebServiceURL.weatherURL)\(AppConstants.WebServiceParameter.pSearch)=\(strSearch)&\(AppConstants.WebServiceParameter.pUnits)=metric&\(AppConstants.WebServiceParameter.pAppId)=\(AppConstants.OpenWeather.pAPIKey)"
 
@@ -58,7 +60,9 @@ class DashboardViewModel {
 
         APIManager.apiCall(apiUrl: strURL, method: AppConstants.APIMethodType.kPost, requestPARAMS: params) { [weak self] result in
 
-            Utility().hideLoader()
+            if isLoader {
+                Utility().hideLoader()
+            }
 
             guard let self else { return }
 

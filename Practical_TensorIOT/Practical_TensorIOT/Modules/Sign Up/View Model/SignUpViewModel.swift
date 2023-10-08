@@ -47,7 +47,7 @@ class SignUpViewModel {
     }
 
     //MARK: - Webservice SignUp Method
-    internal func wsSignUp(name: String, username: String, emailId: String, password: String, bio: String, profilePic: Data?) {
+    internal func wsSignUp(name: String, username: String, emailId: String, password: String, bio: String, profilePic: Data?, completion: @escaping (_ success: Bool) -> ()) {
 
         guard case NetworkCheck.isConnectedToNetwork() = true else {
             Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgNetworkConnection)
@@ -75,7 +75,7 @@ class SignUpViewModel {
 
                 storeUserData(name: name, username: username, emailId: emailId, password: password, bio: bio, profilePic: profilePic, userDetails: dictUserDetails)
 
-                //                popToBack()
+                completion(true)
             } else if let error = error as NSError?, let authErrorCode = AuthErrorCode.Code(rawValue: error.code) {
 
                 switch authErrorCode {
@@ -95,6 +95,8 @@ class SignUpViewModel {
                 default:
                     Utility().dynamicToastMessage(strMessage: error.localizedDescription)
                 }
+
+                completion(false)
             }
         }
     }

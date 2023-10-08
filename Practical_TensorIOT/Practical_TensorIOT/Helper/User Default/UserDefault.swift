@@ -4,11 +4,12 @@
 //
 
 import Foundation
+import SwiftKeychainWrapper
 
 //MARK: - User Default
 struct UserDefault {
 
-    //MARK: - UserDefault Methods
+    //MARK: - Set & Get UserDefault Methods
     func setUserDefault<T>(_ object : T  , key : String) {
         let defaults = UserDefaults.standard
         defaults.set(object, forKey: key)
@@ -24,7 +25,20 @@ struct UserDefault {
         return nil
     }
 
-    func isKeyPresentInUserDefaults(key: String) -> Bool {
+    //MARK: - Is Key Present UserDefaults Method
+    func isKeyPresentInUserDefault(key: String) -> Bool {
         return UserDefaults.standard.object(forKey: key) != nil
+    }
+
+    //MARK: - UserDefault & KeyChain Data Clear Method
+    func userDefaultKeyChainDataClear() {
+
+        UserDefaults.standard.removeObject(forKey: AppConstants.UserDefaultKeys.kEmailID)
+        UserDefaults.standard.removeObject(forKey: AppConstants.UserDefaultKeys.kUserId)
+
+        KeychainWrapper.standard.removeObject(forKey: AppConstants.UserDefaultKeys.kPassword)
+
+        UserDefaults.standard.removeObject(forKey: AppConstants.UserDefaultKeys.kIsKeyChain)
+        UserDefaults.standard.synchronize()
     }
 }

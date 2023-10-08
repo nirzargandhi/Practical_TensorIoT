@@ -12,6 +12,10 @@ extension AppDelegate {
     //MARK: - Config App Method
     func configApp() {
 
+        if !UserDefault().isKeyPresentInUserDefault(key: AppConstants.UserDefaultKeys.kIsKeyChain) {
+            UserDefault().userDefaultKeyChainDataClear()
+        }
+
         setFirebase()
 
         setIQKeyboard()

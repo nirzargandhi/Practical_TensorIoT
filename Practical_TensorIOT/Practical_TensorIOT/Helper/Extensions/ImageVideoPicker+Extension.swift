@@ -7,17 +7,120 @@ import AVFoundation
 import Photos
 import UIKit
 
+//MARK: - Choose Picture protocol
 protocol ChoosePicture {
 
     func takeAndChoosePhoto()
-    func takeAndChooseVideo()
-    func takePhoto()
-    func takeVideo()
-    func choosePhotoAndVideo(isPhoto : Bool,isVideo : Bool)
+    func openCamera()
+    func openGallery()
 }
 
-extension ChoosePicture where Self: UIViewController, Self: UIImagePickerControllerDelegate, Self : UINavigationControllerDelegate {
+//MARK: - ChoosePicture Extension
+extension ChoosePicture where Self: UIViewController, Self: UIImagePickerControllerDelegate, Self: UINavigationControllerDelegate {
 
+    //MARK: - Take And Choose Photo Method
+    func takeAndChoosePhoto() {
+
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        let btnCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action: UIAlertAction) -> Void in
+        })
+
+        let btnTakePhoto = UIAlertAction(title: "Take Photo", style: .default, handler: {(action: UIAlertAction) -> Void in
+            self.openCamera()
+        })
+
+        let btnChooseExisting = UIAlertAction(title: "Choose Photo", style: .default, handler: {(_ action: UIAlertAction) -> Void in
+            self.openGallery()
+        })
+
+        alert.addAction(btnCancel)
+        alert.addAction(btnTakePhoto)
+        alert.addAction(btnChooseExisting)
+
+        alert.popoverPresentationController?.sourceView = self.view
+
+        present(alert, animated: true)
+    }
+
+    //MARK: - Open Camera Method
+    func openCamera() {
+
+        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+            Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgNoCamera)
+        } else {
+            let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+
+            switch authStatus {
+
+            case .authorized:
+                let imagePickerController = UIImagePickerController()
+                imagePickerController.sourceType = .camera
+                imagePickerController.delegate = self
+                imagePickerController.modalPresentationStyle = .overFullScreen
+
+                self.present(imagePickerController, animated: true, completion: {() -> Void in
+                })
+
+            case .denied:
+                self.alertPromptToAllowCameraAccessViaSetting()
+
+            default:
+                let imagePickerController = UIImagePickerController()
+                imagePickerController.sourceType = .camera
+                imagePickerController.delegate = self
+                imagePickerController.modalPresentationStyle = .overFullScreen
+                self.present(imagePickerController, animated: true, completion: {() -> Void in
+                })
+            }
+        }
+    }
+
+    //MARK: - Open Gallery Method
+    func openGallery() {
+
+        func openImagePickerController() {
+
+            DispatchQueue.main.async {
+
+                let imagePickerController = UIImagePickerController()
+                imagePickerController.sourceType = .photoLibrary
+                imagePickerController.modalPresentationStyle = .overFullScreen
+                imagePickerController.mediaTypes = ["public.image","public.movie"]
+                imagePickerController.delegate = self
+
+                self.present(imagePickerController, animated: true, completion: {() -> Void in
+                })
+            }
+        }
+
+        let status = PHPhotoLibrary.authorizationStatus()
+
+        switch status {
+
+        case .authorized:
+            openImagePickerController()
+
+        case .denied:
+            DispatchQueue.main.async {
+                self.alertPromptToAllowPhotoAccessViaSetting()
+            }
+
+        default:
+            PHPhotoLibrary.requestAuthorization({ (newStatus) in
+
+                if (newStatus == PHAuthorizationStatus.authorized) {
+                    openImagePickerController()
+                } else {
+                    DispatchQueue.main.async {
+                        self.alertPromptToAllowPhotoAccessViaSetting()
+                    }
+                }
+            })
+        }
+    }
+
+    //MARK: - Alert Prompt To Allow Photo & Camer Access Via Setting Methods
     func alertPromptToAllowPhotoAccessViaSetting() {
 
         let alert = UIAlertController(title: "Permission Alert", message: AppConstants.AlertMessage.msgPhotoLibraryPermission, preferredStyle: .alert)
@@ -56,163 +159,5 @@ extension ChoosePicture where Self: UIViewController, Self: UIImagePickerControl
         })
 
         present(alert, animated: true)
-    }
-
-    func takeAndChoosePhoto() {
-
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-        let btnCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action: UIAlertAction) -> Void in
-        })
-
-        let btnTakePhoto = UIAlertAction(title: "Take Photo", style: .default, handler: {(action: UIAlertAction) -> Void in
-            self.takePhoto()
-        })
-
-        let btnChooseExisting = UIAlertAction(title: "Choose Photo", style: .default, handler: {(_ action: UIAlertAction) -> Void in
-            self.choosePhotoAndVideo(isPhoto: true, isVideo: false)
-        })
-
-        alert.addAction(btnCancel)
-        alert.addAction(btnTakePhoto)
-        alert.addAction(btnChooseExisting)
-
-        alert.popoverPresentationController?.sourceView = self.view
-
-        present(alert, animated: true)
-    }
-
-    func takeAndChooseVideo() {
-
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-        let btnCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action: UIAlertAction) -> Void in
-        })
-
-        let btnTakePhoto = UIAlertAction(title: "Take Video", style: .default, handler: {(action: UIAlertAction) -> Void in
-            self.takeVideo()
-        })
-
-        let btnChooseExisting = UIAlertAction(title: "Choose Video", style: .default, handler: {(_ action: UIAlertAction) -> Void in
-
-            self.choosePhotoAndVideo(isPhoto: false, isVideo: true)
-        })
-
-        alert.addAction(btnCancel)
-        alert.addAction(btnTakePhoto)
-        alert.addAction(btnChooseExisting)
-
-        alert.popoverPresentationController?.sourceView = self.view
-
-        present(alert, animated: true)
-    }
-
-    func takePhoto() {
-
-        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-            Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgNoCamera)
-        } else {
-            let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
-
-            switch authStatus {
-
-            case .authorized:
-                let imagePickerController = UIImagePickerController()
-                imagePickerController.sourceType = .camera
-                imagePickerController.delegate = self
-                imagePickerController.modalPresentationStyle = .overFullScreen
-
-                self.present(imagePickerController, animated: true, completion: {() -> Void in
-                })
-
-            case .denied:
-                self.alertPromptToAllowCameraAccessViaSetting()
-
-            default:
-                let imagePickerController = UIImagePickerController()
-                imagePickerController.sourceType = .camera
-                imagePickerController.delegate = self
-                imagePickerController.modalPresentationStyle = .overFullScreen
-                self.present(imagePickerController, animated: true, completion: {() -> Void in
-                })
-            }
-        }
-    }
-
-    func takeVideo() {
-
-        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-            Utility().dynamicToastMessage(strMessage: AppConstants.AlertMessage.msgNoCamera)
-        } else {
-            let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
-
-            switch authStatus {
-
-            case .authorized:
-                let imagePickerController = UIImagePickerController()
-                imagePickerController.sourceType = .camera
-                imagePickerController.mediaTypes = ["public.movie"]
-                imagePickerController.delegate = self
-                imagePickerController.modalPresentationStyle = .overFullScreen
-                self.present(imagePickerController, animated: true, completion: {() -> Void in
-                })
-
-            case .denied:
-                self.alertPromptToAllowCameraAccessViaSetting()
-
-            default:
-                let imagePickerController = UIImagePickerController()
-                imagePickerController.sourceType = .camera
-                imagePickerController.mediaTypes = ["public.movie"]
-                imagePickerController.delegate = self
-                imagePickerController.modalPresentationStyle = .overFullScreen
-                self.present(imagePickerController, animated: true, completion: {() -> Void in
-                })
-            }
-        }
-    }
-
-    func choosePhotoAndVideo(isPhoto : Bool,isVideo : Bool) {
-
-        func openImagePickerController() {
-
-            DispatchQueue.main.async {
-
-                let imagePickerController = UIImagePickerController()
-                imagePickerController.sourceType = .photoLibrary
-
-                if isPhoto && isVideo {
-                    imagePickerController.mediaTypes = ["public.image","public.movie"]
-                } else if isVideo {
-                    imagePickerController.mediaTypes = ["public.movie"]
-                }
-
-                imagePickerController.delegate = self
-                imagePickerController.modalPresentationStyle = .overFullScreen
-
-                self.present(imagePickerController, animated: true, completion: {() -> Void in
-                })
-            }
-        }
-
-        let status = PHPhotoLibrary.authorizationStatus()
-
-        if (status == PHAuthorizationStatus.authorized) {
-            openImagePickerController()
-        } else if (status == PHAuthorizationStatus.denied) {
-            self.alertPromptToAllowPhotoAccessViaSetting()
-        } else if (status == PHAuthorizationStatus.notDetermined) {
-            PHPhotoLibrary.requestAuthorization({ (newStatus) in
-
-                if (newStatus == PHAuthorizationStatus.authorized) {
-                    openImagePickerController()
-                } else {
-                    DispatchQueue.main.async {
-                        _ = self.navigationController?.popViewController(animated: true)
-                    }
-                }
-            })
-        } else if (status == PHAuthorizationStatus.restricted) {
-        }
     }
 }

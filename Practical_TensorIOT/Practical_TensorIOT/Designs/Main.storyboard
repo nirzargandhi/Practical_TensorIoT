@@ -496,7 +496,7 @@
                                 <rect key="frame" x="0.0" y="79.5" width="375" height="587.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRI-Je-PJu">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="632"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile" translatesAutoresizingMaskIntoConstraints="NO" id="3YP-Jq-vWq">
                                                 <rect key="frame" x="137.5" y="0.0" width="100" height="100"/>
@@ -548,7 +548,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDV-aw-Cdd">
-                                                <rect key="frame" x="20" y="248.5" width="335" height="0.5"/>
+                                                <rect key="frame" x="20" y="253.5" width="335" height="0.5"/>
                                                 <color key="backgroundColor" name="AppPrimary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="zp1-AT-Awj"/>
@@ -558,7 +558,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search by City, State, Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pct-92-zlx">
-                                                <rect key="frame" x="20" y="269" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="274" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="fcr-Y1-qR4"/>
                                                 </constraints>
@@ -587,7 +587,7 @@
                                                 </connections>
                                             </textField>
                                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLt-Zs-spZ">
-                                                <rect key="frame" x="20" y="339" width="335" height="268"/>
+                                                <rect key="frame" x="20" y="344" width="335" height="268"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mumbai" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Om-Zh-8V0">
                                                         <rect key="frame" x="16" y="16" width="251" height="22"/>
@@ -733,7 +733,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No weather data available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhK-jk-inM">
-                                                <rect key="frame" x="89" y="463.5" width="197" height="19.5"/>
+                                                <rect key="frame" x="89" y="468.5" width="197" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
                                                 <color key="textColor" name="AppPrimary"/>
                                                 <nil key="highlightedColor"/>
@@ -747,7 +747,7 @@
                                             <constraint firstItem="DNl-3f-6EA" firstAttribute="top" secondItem="0Xl-z2-3PJ" secondAttribute="bottom" constant="5" id="7Vq-hj-EjH"/>
                                             <constraint firstAttribute="trailing" secondItem="DNl-3f-6EA" secondAttribute="trailing" constant="20" id="ATH-0z-Vnh"/>
                                             <constraint firstItem="3YP-Jq-vWq" firstAttribute="centerX" secondItem="fRI-Je-PJu" secondAttribute="centerX" id="BXh-Bp-nml"/>
-                                            <constraint firstItem="nDV-aw-Cdd" firstAttribute="top" secondItem="uSy-wP-ioV" secondAttribute="bottom" constant="50" id="CpN-UJ-ldD"/>
+                                            <constraint firstItem="nDV-aw-Cdd" firstAttribute="top" secondItem="cKG-FU-2mN" secondAttribute="bottom" constant="50" id="Cmf-xZ-icZ"/>
                                             <constraint firstItem="jww-Lb-qKF" firstAttribute="leading" secondItem="fRI-Je-PJu" secondAttribute="leading" constant="20" id="Hym-e1-RWb"/>
                                             <constraint firstItem="WhK-jk-inM" firstAttribute="centerX" secondItem="bLt-Zs-spZ" secondAttribute="centerX" id="JED-tk-xUJ"/>
                                             <constraint firstItem="0Xl-z2-3PJ" firstAttribute="top" secondItem="3YP-Jq-vWq" secondAttribute="bottom" constant="10" id="M3C-fW-Fd3"/>

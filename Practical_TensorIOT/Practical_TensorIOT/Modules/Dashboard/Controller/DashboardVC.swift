@@ -46,11 +46,10 @@ class DashboardVC: UIViewController {
         super.viewDidLoad()
 
         initialization()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
 
         setUserData()
+
+        setWeatherData(search: "Kolkata", isLoader: false)
     }
 
     //MARK: - Initialization Method
@@ -64,7 +63,9 @@ class DashboardVC: UIViewController {
         let actionController: UIAlertController = UIAlertController(title: AppConstants.AlertMessage.msgLogoutTitle, message: AppConstants.AlertMessage.msgLogoutDescription, preferredStyle: .alert)
 
         let logoutAction : UIAlertAction = UIAlertAction(title: "Log Out", style: .cancel) {_ in
-            //logoutUserManually()
+            UserDefault().userDefaultKeyChainDataClear()
+
+            GlobalVariables.shared.appDelegate?.setRootSignInVC()
         }
 
         let goBackAction : UIAlertAction = UIAlertAction(title: "Go Back", style: .default) { action -> Void in }
@@ -101,9 +102,9 @@ class DashboardVC: UIViewController {
     }
 
     //MARK: - Set Weather Data Method
-    internal func setWeatherData(search: String) {
+    internal func setWeatherData(search: String, isLoader: Bool = true) {
 
-        objDashboardViewModel.callWeatherAPI(strSearch: search) { [weak self] success, responseData  in
+        objDashboardViewModel.callWeatherAPI(strSearch: search, isLoader: isLoader) { [weak self] success, responseData  in
 
             guard let self else { return }
 

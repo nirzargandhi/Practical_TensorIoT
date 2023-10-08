@@ -43,6 +43,9 @@ class SignUpVC: UIViewController {
 
     //MARK: - UIButton Action Methods
     @IBAction func btnBackAction(_ sender: Any) {
+
+        Utility().hideIQKeyboard()
+
         self.navigationController?.popViewController(animated: true)
     }
 
@@ -58,7 +61,12 @@ class SignUpVC: UIViewController {
         Utility().hideIQKeyboard()
 
         if objSignUpViewModel.checkValidations(name: txtFullName, username: txtUsername, emailId: txtEmailId, password: txtPassword, bio: tvBio) {
-            objSignUpViewModel.wsSignUp(name: txtFullName.text ?? "", username: txtUsername.text ?? "", emailId: txtEmailId.text ?? "", password: txtPassword.text ?? "", bio: tvBio.text ?? "", profilePic: dataProfilePic ?? nil)
+            objSignUpViewModel.wsSignUp(name: txtFullName.text ?? "", username: txtUsername.text ?? "", emailId: txtEmailId.text ?? "", password: txtPassword.text ?? "", bio: tvBio.text ?? "", profilePic: dataProfilePic ?? nil) {success in
+
+                if success {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
     }
 }

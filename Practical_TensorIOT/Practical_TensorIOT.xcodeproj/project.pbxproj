@@ -16,7 +16,6 @@
 		E619BB692AD205A8006550D5 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB682AD205A8006550D5 /* UserDataModel.swift */; };
 		E619BB6B2AD20652006550D5 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB6A2AD20652006550D5 /* Encodable+Extension.swift */; };
 		E619BB6D2AD2069B006550D5 /* ImageVideoPicker+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB6C2AD2069B006550D5 /* ImageVideoPicker+Extension.swift */; };
-		E619BB6F2AD2071E006550D5 /* CameraAudioPermission+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB6E2AD2071E006550D5 /* CameraAudioPermission+Extension.swift */; };
 		E619BB712AD2099D006550D5 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E619BB702AD2099D006550D5 /* UIApplication+Extension.swift */; };
 		E61B44FE2AD185FB001C3585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B44FD2AD185FB001C3585 /* AppDelegate.swift */; };
 		E61B450A2AD185FE001C3585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E61B45082AD185FE001C3585 /* LaunchScreen.storyboard */; };
@@ -87,7 +86,6 @@
 		E619BB682AD205A8006550D5 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		E619BB6A2AD20652006550D5 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		E619BB6C2AD2069B006550D5 /* ImageVideoPicker+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageVideoPicker+Extension.swift"; sourceTree = "<group>"; };
-		E619BB6E2AD2071E006550D5 /* CameraAudioPermission+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraAudioPermission+Extension.swift"; sourceTree = "<group>"; };
 		E619BB702AD2099D006550D5 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		E61B44FA2AD185FB001C3585 /* Practical_TensorIOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practical_TensorIOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61B44FD2AD185FB001C3585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 			isa = PBXGroup;
 			children = (
 				E61B45362AD187DC001C3585 /* AppDelegate+Configuration.swift */,
-				E619BB6E2AD2071E006550D5 /* CameraAudioPermission+Extension.swift */,
 				E619BB6A2AD20652006550D5 /* Encodable+Extension.swift */,
 				E619BB6C2AD2069B006550D5 /* ImageVideoPicker+Extension.swift */,
 				E619BB702AD2099D006550D5 /* UIApplication+Extension.swift */,
@@ -680,7 +677,6 @@
 				E66D5CFB2AD1DC14004A1D87 /* GlobalVariables.swift in Sources */,
 				E66D5CFD2AD1DFC6004A1D87 /* SignInVC+UITextFieldDelegate.swift in Sources */,
 				E64411B02AD1A9E900BA76AF /* DashboardVC.swift in Sources */,
-				E619BB6F2AD2071E006550D5 /* CameraAudioPermission+Extension.swift in Sources */,
 				E61B45402AD18A2D001C3585 /* JailbreakDetector.swift in Sources */,
 				E619BB612AD201E6006550D5 /* SignUpVC+UITextFieldDelegate.swift in Sources */,
 				E61B45392AD18808001C3585 /* UIView+Extension.swift in Sources */,

@@ -46,6 +46,8 @@ class SignInVC: UIViewController {
             btnSignIn.backgroundColor = .appPrimaryColor()
 
             btnSignIn.isUserInteractionEnabled = true
+
+            callSignIn()
         } else {
             btnSignIn.backgroundColor = .appGrayColor()
 
@@ -57,6 +59,20 @@ class SignInVC: UIViewController {
     @IBAction func btnSignInAction(_ sender: Any) {
 
         Utility().hideIQKeyboard()
+
+        callSignIn()
+    }
+
+    @IBAction func btnCreateAccountAction(_ sender: Any) {
+
+        Utility().hideIQKeyboard()
+
+        let objSignUpVC = AppConstants.AllStoryBoard.Main.instantiateViewController(withIdentifier: AppConstants.ViewControllerName.kSignUpVC) as! SignUpVC
+        self.navigationController?.pushViewController(objSignUpVC, animated: true)
+    }
+
+    //MARK: - Call Sign In Method
+    private func callSignIn() {
 
         if objSignInViewModel.checkValidations(emailId: txtEmailId, password: txtPassword) {
             objSignInViewModel.wsSignIn(emailId: txtEmailId.text ?? "", password: txtPassword.text ?? "") { [weak self] success in
@@ -71,13 +87,5 @@ class SignInVC: UIViewController {
                 }
             }
         }
-    }
-
-    @IBAction func btnCreateAccountAction(_ sender: Any) {
-
-        Utility().hideIQKeyboard()
-
-        let objSignUpVC = AppConstants.AllStoryBoard.Main.instantiateViewController(withIdentifier: AppConstants.ViewControllerName.kSignUpVC) as! SignUpVC
-        self.navigationController?.pushViewController(objSignUpVC, animated: true)
     }
 }
